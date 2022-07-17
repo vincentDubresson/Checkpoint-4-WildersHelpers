@@ -204,6 +204,7 @@ class UserFixtures extends Fixture
                 ->setPolaroid($wilder['polaroid'])
                 ->setRotation($wilder['rotation']);
             $manager->persist($user);
+            $this->addReference('user_' . $wilder['firstName'], $user);
         }
 
         $manager->flush();
