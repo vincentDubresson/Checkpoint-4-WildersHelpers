@@ -12,12 +12,12 @@ class CategoryFixtures extends Fixture
         'Bricolage',
         'Cuisine',
         'Cinéma',
-        'Dev web',
+        'DevWeb',
         'Divers',
-        'Garde d\'enfant',
+        'Garde',
         'Informatique',
         'Jardin',
-        'Jeux Vidéo',
+        'Jeux-Vidéo',
         'Musique',
         'Santé'
     ];
@@ -27,6 +27,7 @@ class CategoryFixtures extends Fixture
         foreach (self::CATEGORIES as $category) {
             $postCategory = new Category();
             $postCategory->setName($category);
+            $this->addReference('category_' . $category, $postCategory);
             $manager->persist($postCategory);
         }
 

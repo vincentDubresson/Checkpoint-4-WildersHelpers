@@ -17,6 +17,7 @@ class TypeFixtures extends Fixture
         foreach (self::TYPES as $type) {
             $postType = new Type();
             $postType->setName($type);
+            $this->addReference('type_' . $type, $postType);
             $manager->persist($postType);
         }
 
