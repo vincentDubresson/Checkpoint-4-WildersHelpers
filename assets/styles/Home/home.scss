@@ -1,0 +1,10 @@
+@import '../_var.scss';
+
+.home-main-content {
+    position: relative;
+    @include dimension(100vw, 90vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,2 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
-@import "./var.scss";
+@import "./_var.scss";
+
+// Layouts
+@import "./Layouts/_header.scss";
+@import "./Layouts/_footer.scss";
+
+// Home page
+@import "./Home/home.scss";
+@import "./Home/modals/_wilders_team.scss";

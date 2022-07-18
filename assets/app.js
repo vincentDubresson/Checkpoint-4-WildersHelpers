@@ -10,5 +10,8 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+import './scripts/Layouts/_header.js';
+import './scripts/Layouts/_footer.js';
+import './scripts/Home/home.js';
 
 require('bootstrap');

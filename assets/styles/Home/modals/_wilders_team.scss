@@ -1,0 +1,45 @@
+@import '../../_var.scss';
+
+.wilders-team {
+    position: absolute;
+    right: -100%; //-100%
+    @include dimension(90%, 90%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 40px 10px 0 10px;
+    background-color: rgba(240, 248, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
+    transition: 1.2s;
+    transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+    .wilders-team-modal-close {
+        @include dimension(30px, 30px);
+        @include absolutePositionRight(10px, 15px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .wilders-team-close-icon {
+            @include dimension(100%, 100%);
+        }
+    }
+    .wilders-team-polaroids {
+        @include dimension(100%, 50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        .wilders-team-polaroids-title {
+            font-family: 'SouthPark', sans-serif;
+            font-size: calc(1rem + 0.5vw);
+        }
+    }
+}
+
+.wilders-team-display {
+    right: 5%;
+}

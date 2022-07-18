@@ -1,0 +1,33 @@
+.footer {
+    @include dimension(100vw, 50px);
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3;
+    .footer-links {
+        font-family: 'SouthPark', sans-serif;
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+    }
+    .footer-text {
+        font-family: 'SouthPark', sans-serif;
+        font-size: 14px;
+        color: white;
+        margin-bottom: 0;
+    }
+    .footer-poo {
+        position: absolute;
+        top: -96px;
+        left: -150px;
+        width: 150px;
+        transform: rotateZ(45deg);
+        z-index: 0;
+        transition: 0.3s;
+    }
+}
+
+.footer-poo-display {
+    left: -65px !important;
+}
