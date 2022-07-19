@@ -10,8 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(UserRepository $userRepository): Response
-    {
+    public function index(
+        UserRepository $userRepository,
+    ): Response {
         $wilders = $userRepository->findBy([], ['id' => 'DESC']);
 
         return $this->render('home/index.html.twig', [

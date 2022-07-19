@@ -14,7 +14,7 @@
 
 .wilders-team {
     position: absolute;
-    right: 5%; //-100%
+    right: -100%; //-100%
     @include dimension(90%, 90%);
     display: flex;
     flex-direction: column;
@@ -56,9 +56,7 @@
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            max-height: 415px;
-            background-color: rgb(228, 228, 228);
-            border: 1px solid black;
+            max-height: 450px;
             .wilders-team-polaroids-content {
                 @include dimension(100%, 95%);
                 position: relative;
@@ -98,7 +96,6 @@
             }
         }
         .wilders-team-description-zone {
-            background-color: rgb(228, 228, 228);
             position: relative;
             display: flex;
             justify-content: center;
@@ -106,10 +103,9 @@
             width: 100%;
             min-height: 30%;
             margin-bottom: 5px;
-            border: 1px solid black;
-            .carousel-description{
+            .carousel-description {
                 @include dimension(100%, 100%);
-                background-color: rgb(228, 228, 228);
+                background-color: white;
                 position: absolute;
                 display: flex;
                 flex-direction: column;
@@ -118,6 +114,8 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                border: 1px solid rgb(206, 206, 206);
+                border-radius: 5px;
                 z-index: 2;
                 .carousel-description-question {
                     font-family: 'SouthPark', sans-serif;
@@ -127,7 +125,15 @@
                 .carousel-description-joke {
                     font-family: 'SouthPark', sans-serif;
                     font-size: calc(0.7rem + 0.5vw);
-                    padding: 0 calc(10px + 2vw);
+                    padding: 0 calc(10px + 5vw);
+                    margin-bottom: 15px;
+                }
+                .carousel-description-answer {
+                    font-family: 'SouthPark', sans-serif;
+                    font-size: calc(0.7rem + 0.5vw);
+                    text-align: left;
+                    padding: 0 calc(10px + 5vw);
+                    margin-bottom: 0;
                 }
             }
         }
@@ -138,12 +144,12 @@
     right: 5%;
 }
 
-.z-index-1 {
+.z-index-2 {
     animation-name: slide;
     animation-duration: 0.5s;
     z-index: 2 !important;
 }
 
-.z-index-0 {
+.z-index-1 {
     z-index: 1 !important;
 }
