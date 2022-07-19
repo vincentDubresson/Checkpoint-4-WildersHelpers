@@ -17,7 +17,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Thomas_A.png',
-            'polaroid' => 'build/images/polaroid_Thomas_A.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Thomas_A.png',
             'rotation' => 4,
         ],
         [
@@ -27,7 +27,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Anthony_G.png',
-            'polaroid' => 'build/images/polaroid_Anthony_G.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Anthony_G.png',
             'rotation' => 3,
         ],
         [
@@ -37,7 +37,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Celie_R.png',
-            'polaroid' => 'build/images/polaroid_Celie_R.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Celie_R.png',
             'rotation' => 2,
         ],
         [
@@ -47,7 +47,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Christopher_C.png',
-            'polaroid' => 'build/images/polaroid_Christopher_C.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Christopher_C.png',
             'rotation' => 1,
         ],
         [
@@ -57,7 +57,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Cidjie_P.png',
-            'polaroid' => 'build/images/polaroid_Cidjie_P.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Cidjie_P.png',
             'rotation' => 4,
         ],
         [
@@ -67,7 +67,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_David_H.png',
-            'polaroid' => 'build/images/polaroid_David_H.png',
+            'polaroid' => 'build/images/polaroid/polaroid_David_H.png',
             'rotation' => 3,
         ],
         [
@@ -77,7 +77,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Emmanuelle_A.png',
-            'polaroid' => 'build/images/polaroid_Emmanuelle_A.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Emmanuelle_A.png',
             'rotation' => 2,
         ],
         [
@@ -87,7 +87,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Gautier_F.png',
-            'polaroid' => 'build/images/polaroid_Gautier_F.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Gautier_F.png',
             'rotation' => 1,
         ],
         [
@@ -97,7 +97,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Guillaume_H.png',
-            'polaroid' => 'build/images/polaroid_Guillaume_H.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Guillaume_H.png',
             'rotation' => 4,
         ],
         [
@@ -107,7 +107,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Justine_G.png',
-            'polaroid' => 'build/images/polaroid_Justine_G.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Justine_G.png',
             'rotation' => 3,
         ],
         [
@@ -117,7 +117,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Kenny_M.png',
-            'polaroid' => 'build/images/polaroid_Kenny_M.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Kenny_M.png',
             'rotation' => 2,
         ],
         [
@@ -127,7 +127,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Ludovic_D.png',
-            'polaroid' => 'build/images/polaroid_Ludovic_D.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Ludovic_D.png',
             'rotation' => 1,
         ],
         [
@@ -137,7 +137,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Naji_M.png',
-            'polaroid' => 'build/images/polaroid_Naji_M.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Naji_M.png',
             'rotation' => 4,
         ],
         [
@@ -147,7 +147,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Nicolas_G.png',
-            'polaroid' => 'build/images/polaroid_Nicolas_G.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Nicolas_G.png',
             'rotation' => 3,
         ],
         [
@@ -157,7 +157,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Theo_B.png',
-            'polaroid' => 'build/images/polaroid_Theo_B.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Theo_B.png',
             'rotation' => 2,
         ],
         [
@@ -167,7 +167,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_ADMIN', 'ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Vincent_D.png',
-            'polaroid' => 'build/images/polaroid_Vincent_D.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Vincent_D.png',
             'rotation' => 1,
         ],
         [
@@ -177,7 +177,7 @@ class UserFixtures extends Fixture
             'password' => 'toto69',
             'roles' => ['ROLE_USER'],
             'avatar' => 'build/images/avatars/avatar_Yannis_C.png',
-            'polaroid' => 'build/images/polaroid_Yannis_C.png',
+            'polaroid' => 'build/images/polaroid/polaroid_Yannis_C.png',
             'rotation' => 4,
         ],
     ];

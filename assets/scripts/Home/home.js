@@ -18,5 +18,5 @@ if (document.getElementById('wilders-team-link')) {
 
     wildersTeamModalClose.addEventListener('click', () => {
         wildersTeamModal.classList.remove('wilders-team-display');
-    })
+    });
 }

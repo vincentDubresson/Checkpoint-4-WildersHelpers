@@ -13,5 +13,7 @@ import './bootstrap';
 import './scripts/Layouts/_header.js';
 import './scripts/Layouts/_footer.js';
 import './scripts/Home/home.js';
+import './scripts/Home/modals/_wilders_team.js';
+
 
 require('bootstrap');

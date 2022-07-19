@@ -1,5 +1,17 @@
 @import '../../_var.scss';
 
+@keyframes slide {
+    0% {
+        z-index: 3;
+    }
+    50% {
+        transform: translate(200px, -50%);
+    }
+    100% {
+        z-index: 2;
+    }
+}
+
 .wilders-team {
     position: absolute;
     right: -100%; //-100%
@@ -27,7 +39,7 @@
         }
     }
     .wilders-team-polaroids {
-        @include dimension(100%, 50%);
+        @include dimension(100%, 100%);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -37,9 +49,63 @@
             font-family: 'SouthPark', sans-serif;
             font-size: calc(1rem + 0.5vw);
         }
+        .wilders-team-polaroids-zone {
+            @include dimension(100%, calc(50% + 20vw));
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            max-height: 415px;
+            background-color: rgb(228, 228, 228);
+            border: 1px solid black;
+            .wilders-team-polaroids-content {
+                @include dimension(100%, 95%);
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                .carousel-picture-general-style {
+                    @include dimension(60%, auto);
+                    max-width: 265px;
+                    position: absolute;
+                    top: 49%;
+                    left: 50%;
+                    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.02);
+                    border: 1px solid rgb(206, 206, 206);
+                    border-radius: 5px;
+                    z-index: 3;
+                    cursor: pointer;
+                }
+                .rotate-z-1 {
+                    transform: translate(-50%, -50%) rotate(10deg);
+                }
+                .rotate-z-2 {
+                    transform: translate(-50%, -50%) rotate(4deg);
+                }
+                .rotate-z-3 {
+                    transform: translate(-50%, -50%) rotate(-4deg);
+                }
+                .rotate-z-4 {
+                    transform: translate(-50%, -50%) rotate(-10deg);
+                }
+            }
+            .wilders-team-polaroids-indication {
+                @include dimension(100%, 10%);
+                font-family: 'SouthPark', sans-serif;
+                text-align: center;
+                margin-bottom: 0;
+            }
+        }
     }
 }
 
 .wilders-team-display {
     right: 5%;
+}
+
+.z-index-1 {
+    animation-name: slide;
+    animation-duration: 0.5s;
+    z-index: 2 !important;
 }

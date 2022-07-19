@@ -7,7 +7,13 @@
             Wilders Team PHP 2022 !!
         </h1>
         <div class="wilders-team-polaroids-zone">
-
+            <div class="wilders-team-polaroids-content" id="wilders-team-polaroids-content">
+            {% for wilder in wilders %}
+                <img class="carousel-picture-general-style wilder-{{ loop.revindex }} rotate-z-{{ wilder.rotation }}"
+                    src="{{ asset('' ~ wilder.polaroid ~ '') }}"/>
+            {% endfor %}
+            </div>
+            <p class="wilders-team-polaroids-indication">Cliquez sur les polaroids !</p>
         </div>
     </div>
 </section>
