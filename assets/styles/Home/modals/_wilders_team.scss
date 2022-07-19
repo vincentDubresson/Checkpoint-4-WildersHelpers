@@ -14,7 +14,7 @@
 
 .wilders-team {
     position: absolute;
-    right: -100%; //-100%
+    right: 5%; //-100%
     @include dimension(90%, 90%);
     display: flex;
     flex-direction: column;
@@ -97,6 +97,40 @@
                 margin-bottom: 0;
             }
         }
+        .wilders-team-description-zone {
+            background-color: rgb(228, 228, 228);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 30%;
+            margin-bottom: 5px;
+            border: 1px solid black;
+            .carousel-description{
+                @include dimension(100%, 100%);
+                background-color: rgb(228, 228, 228);
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                .carousel-description-question {
+                    font-family: 'SouthPark', sans-serif;
+                    font-size: calc(1rem + 0.5vw);
+                    margin-bottom: 15px;
+                }
+                .carousel-description-joke {
+                    font-family: 'SouthPark', sans-serif;
+                    font-size: calc(0.7rem + 0.5vw);
+                    padding: 0 calc(10px + 2vw);
+                }
+            }
+        }
     }
 }
 
@@ -108,4 +142,8 @@
     animation-name: slide;
     animation-duration: 0.5s;
     z-index: 2 !important;
+}
+
+.z-index-0 {
+    z-index: 1 !important;
 }

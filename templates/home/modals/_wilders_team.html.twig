@@ -15,5 +15,13 @@
             </div>
             <p class="wilders-team-polaroids-indication">Cliquez sur les polaroids !</p>
         </div>
+        <div class="wilders-team-description-zone">
+            {% for wilder in wilders %}
+                <div class="carousel-description wilder-{{ loop.revindex }}">
+                    <h2 class="carousel-description-question">Une petite blague {{ wilder.firstName }} ?</h2>
+                    <p class="carousel-description-joke">zerazerazeraz azerazerazer azerazer azer azer azerazerazer azerazera zerazer azerazerazer azerazer azerazer</p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
