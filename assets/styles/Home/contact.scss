@@ -117,7 +117,9 @@
         }
         .contact-form-picture {
             display: block;
-            @include absolutePosition(450px, 85px);
+            position: absolute;
+            bottom: 20px;
+            left: 70px;
             width: 300px;
         }
         .contact-form-description {
