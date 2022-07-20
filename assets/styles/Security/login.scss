@@ -1,0 +1,64 @@
+@import '../_var.scss';
+
+.login-form {
+    @include dimension(395px, 600px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    gap: 10px;
+    padding: 40px 10px 0 10px;
+    background-color: rgba(240, 248, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
+    .login-form-logo {
+        width: 70%;
+    }
+    .login-form-alert {
+        font-family: $SouthParkFont;
+        font-size: 15px !important;
+        text-align: center;
+    }
+    .login-form-title {
+        font-family: $SouthParkFont;
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    .login-form-input-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .login-form-label {
+        font-family: $SouthParkFont;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    .login-form-input {
+        font-family: $SouthParkFont;
+        font-size: 12px;
+        width: 270px;
+        height: 30px;
+        margin-bottom: 15px;
+        padding-left: 5px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+    }
+    .login-form-button {
+        @include dimension(165px, 30px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $greenColor;
+        border: none;
+        margin: auto;
+        border-radius: 20px;
+        font-family: $SouthParkFont;
+        font-size: 1rem;
+    }
+}

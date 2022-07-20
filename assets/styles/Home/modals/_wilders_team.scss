@@ -22,11 +22,12 @@
     align-items: center;
     gap: 10px;
     padding: 40px 10px 0 10px;
-    background-color: rgba(240, 248, 255, );
+    background-color: rgba(240, 248, 255, 0.9);
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
     transition: 1.2s;
     transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+    z-index: 2;
     .wilders-team-cartman-image {
         display: none;
     }

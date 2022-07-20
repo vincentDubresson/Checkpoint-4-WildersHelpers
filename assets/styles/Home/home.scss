@@ -173,6 +173,15 @@
     }
 }
 
+.redirect-button {
+    text-decoration: none;
+    color: inherit;
+    z-index: 1;
+    &:hover {
+        color: inherit;
+    }
+}
+
 @media screen and (min-width: 900px) {
     .home-presentation {
         flex-direction: row !important;

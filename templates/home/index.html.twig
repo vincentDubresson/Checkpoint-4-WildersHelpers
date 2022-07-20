@@ -17,9 +17,11 @@
       </div>
       <div class="home-presentation-connexion">
          <img class="home-presentation-connexion-picture" src="{{ asset('build/images/divers/all-friends.png') }}"/>
-         <button class="home-presentation-connexion-button"
+         <button type="button" class="home-presentation-connexion-button"
                   id="home-presentation-connexion-button">
+            <a class="redirect-button" href="{{ path('app_login') }}">
             Se connecter
+            </a>
          </button>
       </div>
    </section>
@@ -38,7 +40,9 @@
       </div>
       <button class="home-last-all-demands-button"
                id="home-last-all-demands-button">
+         <a class="redirect-button" href="{{ path('app_login') }}">
          Voir toutes les demandes
+         </a>
       </button>
    </section>
    <section class="home-last-offers">
@@ -56,7 +60,9 @@
       </div>
       <button class="home-last-all-offers-button"
                id="home-last-all-offers-button">
+         <a class="redirect-button" href="{{ path('app_login') }}">
          Voir toutes les offres
+         </a>
       </button>
    </section>
  </main>

@@ -1,6 +1,7 @@
 if (document.getElementById('burger-menu')) {
 
     const burgerMenu = document.getElementById('burger-menu');
+    const wildersTeamModal = document.querySelector('.wilders-team');
 
     burgerMenu.addEventListener('click', () => {
         const flexibleMenu = document.getElementById('flexible-menu');
@@ -11,6 +12,7 @@ if (document.getElementById('burger-menu')) {
         secondSpan.classList.toggle('not-cross');
         thirdSpan.classList.toggle('third-line');
         flexibleMenu.classList.toggle('header-menu-display');
+        wildersTeamModal.classList.remove('wilders-team-display');
     });
 
 };
