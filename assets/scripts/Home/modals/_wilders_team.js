@@ -30,7 +30,7 @@ if (document.querySelectorAll('.carousel-picture-general-style')) {
     });
 
     // API Blagues Fetch
-    for (let i = 17; i >= 1; i--) {
+/*     for (let i = 17; i >= 1; i--) {
         fetch('https://www.blagues-api.fr/api/type/dev/random', {
             headers: {
                 'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTk4OTY1ODY5MTgwODkxMjc3IiwibGltaXQiOjEwMCwia2V5IjoidkVIM1kyZkljUHpaVzlnSnlNZHpjRk1WdFFOYjdPOXlYeTExaHhhZDNvSEVuazkybHYiLCJjcmVhdGVkX2F0IjoiMjAyMi0wNy0xOVQxNDo1NDo1NyswMDowMCIsImlhdCI6MTY1ODI0MjQ5N30.yyP7zSo4ghIgUhYl0E0DLj8hIgA1hEIeztDSJjMIeWE`
@@ -41,5 +41,5 @@ if (document.querySelectorAll('.carousel-picture-general-style')) {
             carouselJoke[i].innerHTML = data.joke;
             carouselAnswer[i].innerHTML = data.answer;
         })
-    };
+    }; */
 }

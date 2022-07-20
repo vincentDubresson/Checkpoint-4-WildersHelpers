@@ -14,7 +14,7 @@
 
 .wilders-team {
     position: absolute;
-    right: -100%; //-100%
+    right: -100%;
     @include dimension(90%, 90%);
     display: flex;
     flex-direction: column;
@@ -27,6 +27,9 @@
     box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
     transition: 1.2s;
     transition-timing-function: cubic-bezier(.29, 1.01, 1, -0.68);
+    .wilders-team-cartman-image {
+        display: none;
+    }
     .wilders-team-modal-close {
         @include dimension(30px, 30px);
         @include absolutePositionRight(10px, 15px);
@@ -39,6 +42,7 @@
         }
     }
     .wilders-team-polaroids {
+        position: relative;
         @include dimension(100%, 100%);
         display: flex;
         flex-direction: column;
@@ -116,7 +120,7 @@
                 transform: translate(-50%, -50%);
                 border: 1px solid rgb(206, 206, 206);
                 border-radius: 5px;
-                z-index: 2;
+                z-index: 1;
                 .carousel-description-question {
                     font-family: 'SouthPark', sans-serif;
                     font-size: calc(1rem + 0.5vw);
@@ -141,7 +145,10 @@
 }
 
 .wilders-team-display {
-    right: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }
 
 .z-index-2 {
@@ -152,4 +159,39 @@
 
 .z-index-1 {
     z-index: 1 !important;
+}
+
+@media screen and (min-width: 900px) {
+    .wilders-team {
+        max-width: 1000px !important;
+        height: 75% !important;
+        .wilders-team-cartman-image {
+            @include absolutePositionRight(56%, 10%);
+            display: block;
+        }
+        .wilders-team-polaroids {
+            flex-direction: row !important;
+            .wilders-team-polaroids-title {
+                @include absolutePosition(0, 50%);
+                transform: translateX(-50%);
+            }
+        }
+        .wilders-team-description-zone {
+            height: 40%;
+            align-self: flex-start;
+            margin-top: 6%;
+            .carousel-description-question {
+                font-size: 1.4rem !important;
+            }
+            .carousel-description-joke {
+                font-size: 15px !important;
+                padding: 0 65px !important;
+            }
+            .carousel-description-answer {
+                font-size: 15px !important;
+                padding: 0 65px !important;
+            }
+        }
+    }
+
 }
