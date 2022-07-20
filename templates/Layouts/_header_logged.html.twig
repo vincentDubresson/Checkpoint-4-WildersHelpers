@@ -1,0 +1,20 @@
+<header class="header">
+    <div class="burger-menu" id="burger-menu">
+        <span class="burger-span" id="first-line"></span>
+        <span class="burger-span" id="not-cross"></span>
+        <span class="burger-span" id="third-line"></span>
+    </div>
+    <div class="flexible-menu" id="flexible-menu">
+        <img class="header-logged-avatar" src="{{ asset('' ~ app.user.avatar ~ '') }}"/>
+        <div class="hidden-menu" id="hidden-menu">
+            {% for role in app.user.roles %}
+                {% if role is same as "ROLE_ADMIN" %}
+                    <a class="burger-menu-links" id="wilders-team-link">Acceder au dashboard</a>
+                {% endif %}
+            {% endfor %}
+            <a class="burger-menu-links" href="/">Ajouter une annonce</a>
+            <a class="burger-menu-links" href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>    
+        <img class="logo-menu" src="{{ asset('build/images/logo/logo_big.png') }}" alt="logo blanc">
+    </div>
+</header>

@@ -35,6 +35,14 @@
         justify-content: flex-end;
         align-items: center;
         transition: 0.3s;
+        .header-logged-avatar {
+            @include dimension(40px, 40px);
+            position: absolute;
+            bottom: 19px;
+            left: 17px;
+            border: 2px solid $greenColor;
+            border-radius: 20px;
+        }
         .hidden-menu {
             display: flex;
             flex-direction: column;
