@@ -3,5 +3,41 @@
 {% block title %}Wilders Helpers - Contact{% endblock %}
 
 {% block body %}
-
+    <main class="contact-form">
+        <img class="contact-form-logo" src="{{ asset('build/images/logo/logo_big.png') }}"/>
+        <img class="contact-form-return-icon" onclick="history.back()"
+            src="{{ asset('build/images/icons/home.png') }}"/>
+        <img class="contact-form-picture" src="{{ asset('build/images/divers/cartman_cop.png') }}"/>
+        <div class="contact-form-description">
+            <h1 class="contact-form-description-title">Salut l'ami !</h1>
+            <p class="contact-form-description-text">N'hésites pas à laisser un message à l'administrateur du site !<br>
+                Si tu souhaites intégrer cette magnifique équipe, merci de nous noter dans le message
+                tes motivations. Nous te ferons certainement passer un test technique pour vérifier si
+                tu as le niveau pour nous rejoindre !
+            </p>
+        </div>
+        {{ form_start(form, {attr: {'class': 'contact-form-container'}})}}
+            <div class="contact-form-input">
+                {{ form_errors(form) }}
+            </div>
+            <div class="contact-form-input">
+                {{ form_label(form.firstName) }}
+                {{ form_widget(form.firstName) }}
+            </div>
+            <div class="contact-form-input">
+                {{ form_label(form.LastName) }}
+                {{ form_widget(form.LastName) }}
+            </div>
+            <div class="contact-form-input">
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email) }}
+            </div>
+            <div class="contact-form-input">
+                {{ form_label(form.comment) }}
+                {{ form_widget(form.comment, {attr: {'wrap': 'wrap'}}) }}
+            </div>
+            {{ form_widget(form) }}
+            <button type="submit" class="contact-form-button" id="contact-form-button">Envoyer</button>
+        {{ form_end(form)}}
+    </main>
 {% endblock %}

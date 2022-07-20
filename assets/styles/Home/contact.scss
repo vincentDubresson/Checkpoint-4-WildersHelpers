@@ -1,0 +1,149 @@
+@import '../_var.scss';
+
+.contact-form {
+    position: relative;
+    @include dimension(90%, 85%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    max-width: 1000px;
+    gap: 10px;
+    background-color: rgba(240, 248, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
+    .contact-form-logo {
+        display: none;
+    }
+    .contact-form-return-icon {
+        @include dimension(30px, 30px);
+        @include absolutePosition(-40px, -5px);
+        cursor: pointer;
+    }
+    .contact-form-picture {
+        display: none;
+    }
+    .contact-form-description {
+        @include dimension(90%, 35%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .contact-form-description-title {
+            font-family: $SouthParkFont;
+            font-size: $titleSize;
+            margin-bottom: 0;
+        }
+        .contact-form-description-text {
+            font-family: $SouthParkFont;
+            font-size: $textSize;
+            margin-bottom: 0;
+            text-align: justify;
+        }
+    }
+    .contact-form-container {
+        @include dimension(90%, 60%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        .contact-form-input {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 0 auto;
+            gap: 5px;
+            .contact-form-label {
+                font-family: $SouthParkFont;
+                font-size: $titleSize;
+            }
+            .contact-form-input {
+                height: 30px;
+                font-family: $SouthParkFont;
+                font-size: $textSize;
+                padding-left: 5px;
+                border: none;
+                border-radius: 5px;
+                outline: none;
+            }
+            .contact-form-textarea {
+                height: 90px;
+                width: 100%;
+                font-family: $SouthParkFont;
+                font-size: $textSize;
+                padding-left: 5px;
+                padding-top: 5px;
+                border: none;
+                border-radius: 5px;
+                outline: none;
+                resize: none;
+            }
+        }
+        .contact-form-button {
+            @include dimension(165px, 8%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $redColor;
+            border: none;
+            border-radius: 20px;
+            font-family: $SouthParkFont;
+            font-size: calc(0.8rem + 0.5vw);
+            color: white;
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .contact-form {
+        flex-direction: row !important;
+        padding: 0 15px !important;
+        align-items: flex-start;
+        padding-top: 200px !important;
+        .contact-form-logo {
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-form-picture {
+            display: block;
+            @include absolutePosition(450px, 85px);
+            width: 300px;
+        }
+        .contact-form-description {
+            max-width: 430px !important;
+            padding: 0 10px;
+            .contact-form-description-title {
+                margin-bottom: 15px;
+                font-size: 1.4rem !important;
+            }
+            .contact-form-description-text {
+                font-size: 15px !important;
+            }
+        }
+        .contact-form-label {
+            font-size: 1.4rem !important;
+        }
+        .contact-form-input {
+            font-size: 15px !important;
+        }
+        .contact-form-textarea {
+            font-size: 15px !important;
+
+        }
+        .contact-form-button {
+            font-size: 18px !important;
+            height: 27px !important;
+        }
+    }
+}
