@@ -4,6 +4,25 @@
 
 {% block body %}
  <main class="home-main-content">
-    {% include "/home/modals/_wilders_team.html.twig" %}
+   <section class="home-carousel-container">
+      {% include "/home/modals/_wilders_team.html.twig" %}
+   </section>
+   <section class="home-presentation">
+      <div class="home-presentation-content">
+         <h1 class="home-presentation-title">The best of the reseau for the PHP Wilders 2022 !</h1>
+         <p class="home-presentation-description">Des dizaines d'offres et de demandes de la part de la Team Wilders PHP 2022.<br>
+            Informatique, Bricolage, Cuisine et bien d'autres catégories...<br>
+            N'hésitez pas à poster ! Un camarade sera toujours là pour vous aider !
+         </p>
+      </div>
+      <div class="home-presentation-connexion">
+         <img class="home-presentation-connexion-picture" src="{{ asset('build/images/divers/all-friends.png') }}"/>
+         <button class="home-presentation-connexion-button"
+                  id="home-presentation-connexion-button">
+            Se connecter
+         </button>
+      </div>
+   </section>
+
  </main>
 {% endblock %}

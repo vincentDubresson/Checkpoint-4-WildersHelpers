@@ -3,7 +3,10 @@
     src: URL('../fonts/south\ park.ttf') format('truetype');
 }
 
+$SouthParkFont: 'SouthPark', sans-serif;
 
+$greenColor: rgb(70, 197, 184);
+$redColor: rgb(195, 5, 49);
 
 @mixin dimension($w, $h) {
     width: $w;
@@ -29,8 +32,10 @@
 
 body {
     overflow: hidden;
+    overflow-y: scroll;
     @include dimension(100vw, 100vh);
     background-image: url('../images/background/south_park_backgroud.jpg');
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: 0% 50%;
+    background-attachment: fixed;
 }
