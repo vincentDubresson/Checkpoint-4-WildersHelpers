@@ -30,7 +30,7 @@ class HomeController extends AbstractController
     public function contact(
     ): Response {
 
-        return $this->render('home/index.html.twig', [
+        return $this->render('home/contact.html.twig', [
 
         ]);
     }
