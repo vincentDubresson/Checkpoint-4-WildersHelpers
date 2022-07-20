@@ -52,8 +52,8 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             'user' => 'David',
         ],
         [
-            'title' => 'Si toi aussi tu aimes marcher et l\'histoire',
-            'picture' => 'build/images/post/history.png',
+            'title' => 'Si toi aussi tu aimes l\'histoire de Lyon.',
+            'picture' => 'build/images/post/history.jpg',
             'description' => 'Je te propose une visite guidée de notre belle ville avec anecdotes historiques garanties ! Dégustation offerte dans la cave la plus prestigieuse du 5ème Arrondissement. 300€ la demi-journée !',
             'category' => 'Divers',
             'type' => 'offre',

@@ -23,6 +23,41 @@
          </button>
       </div>
    </section>
-
+   <section class="home-last-demands">
+      <div class="home-last-demands-header">
+         <div class="home-last-demands-header-container">
+            <h2 class="home-last-demands-header-title">Dernières demandes</h2>
+         </div>
+      </div>
+      <div class="home-last-demands-container">
+      {% for post in posts %}
+         {% if post.type.name is same as "demande" %}
+            {% include "/home/layouts/_card.html.twig" %}
+         {% endif %}
+      {% endfor %}
+      </div>
+      <button class="home-last-all-demands-button"
+               id="home-last-all-demands-button">
+         Voir toutes les demandes
+      </button>
+   </section>
+   <section class="home-last-offers">
+      <div class="home-last-offers-header">
+         <div class="home-last-offers-header-container">
+            <h2 class="home-last-offers-header-title">Dernières offres</h2>
+         </div>
+      </div>
+      <div class="home-last-offers-container">
+      {% for post in posts %}
+         {% if post.type.name is same as "offre" %}
+            {% include "/home/layouts/_card.html.twig" %}
+         {% endif %}
+      {% endfor %}
+      </div>
+      <button class="home-last-all-offers-button"
+               id="home-last-all-offers-button">
+         Voir toutes les offres
+      </button>
+   </section>
  </main>
 {% endblock %}

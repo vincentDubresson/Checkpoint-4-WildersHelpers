@@ -1,0 +1,86 @@
+@import '../../_var.scss';
+
+.post-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
+    font-family: $SouthParkFont;
+    .post-card-header {
+        @include dimension(90%, 30px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        .post-card-category-demande {
+            color: $greenColor;
+            font-size: 12px;
+            margin-bottom: 0;
+            line-height: 16px;
+        }
+        .post-card-category-offre {
+            color: $redColor;
+            font-size: 12px;
+            margin-bottom: 0;
+            line-height: 16px;
+        }
+        .post-card-title {
+            font-size: 12px;
+            margin-bottom: 0;
+            line-height: 10px;
+        }
+    }
+    .post-card-picture-container {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .post-card-picture {
+            width: 80%;
+            border-radius: 10px;
+            border: 1px solid gray;
+        }
+    }
+    .post-card-author-date {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        .post-card-author {
+            font-size: 12px;
+            margin-bottom: 0;
+            text-align: left;
+            .post-card-author-color-demande {
+                color: $greenColor;
+            }
+            .post-card-author-color-offre {
+                color: $redColor;
+            }
+        }
+    }
+    .post-card-author {
+        font-size: 12px;
+        margin-bottom: 0;
+        text-align: left;
+        .post-card-author-color-demande {
+            color: $greenColor;
+        }
+        .post-card-author-color-offre {
+            color: $redColor;
+        }
+    }
+    .post-card-description-container {
+        overflow-y: scroll;
+        @include dimension(85%, 45px);
+        margin-bottom: 10px;
+        .post-card-description {
+            font-size: 10px;
+            text-align: justify;
+        }
+    }
+}

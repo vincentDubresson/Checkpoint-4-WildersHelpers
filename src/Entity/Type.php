@@ -18,7 +18,7 @@ class Type
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'type', targetEntity: post::class)]
+    #[ORM\OneToMany(mappedBy: 'type', targetEntity: Post::class)]
     private Collection $post;
 
     public function __construct()
@@ -44,14 +44,14 @@ class Type
     }
 
     /**
-     * @return Collection<int, post>
+     * @return Collection<int, Post>
      */
     public function getPost(): Collection
     {
         return $this->post;
     }
 
-    public function addPost(post $post): self
+    public function addPost(Post $post): self
     {
         if (!$this->post->contains($post)) {
             $this->post[] = $post;
@@ -61,7 +61,7 @@ class Type
         return $this;
     }
 
-    public function removePost(post $post): self
+    public function removePost(Post $post): self
     {
         if ($this->post->removeElement($post)) {
             // set the owning side to null (unless already changed)

@@ -1,0 +1,15 @@
+<div class="post-card">
+    <div class="post-card-header">
+        <p class="post-card-category-{{ post.type.name }}">{{ post.category.name }}</p>
+        <p class="post-card-title">{{ post.title }}</p>
+    </div>
+    <div class="post-card-picture-container">
+        <img class="post-card-picture" src="{{ asset('' ~ post.picture ~ '') }}"/>
+    </div>
+    <div class="post-card-author-date">
+        <p class="post-card-author"><span class="post-card-author-color-{{ post.type.name }}">{{ post.user.firstName }}</span>, le {{ post.creationDate|format_datetime('medium', 'none', locale='fr') }}</p>
+    </div>
+    <div class="post-card-description-container">
+        <p class="post-card-description">{{ post.description }}</p>
+    </div>
+</div>
