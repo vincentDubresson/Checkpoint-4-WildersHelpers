@@ -1,6 +1,7 @@
 @import '../../_var.scss';
 
 .post-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -86,29 +87,87 @@
     .post-card-comments{
         position: relative;
         width: 90%;
+        top: 0;
         border-top: 1px solid grey;
         padding-top: 10px;
+        z-index: 1;
+        .post-card-comments-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            .post-card-comment {
+                width: 100%;
+                display: none; //flex
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+                transition: 0.5s;
+                .post-card-comment-author-date {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+                    gap: 15px;
+                    .post-card-comment-avatar {
+                        @include dimension(25px, 25px);
+                    }
+                    .post-card-comment-author {
+                        font-size: 11px;
+                        margin-bottom: 0;
+                    }
+                }
+                .post-card-comment-details {
+                    font-size: 10px;
+                    width: 72%;
+                    float: right;
+                    margin-bottom: 0;
+                }
+            }
+        }
         .post-card-no-comment-resume {
             display: flex;
             justify-content: space-between;
             .post-card-no-comment-resume-text {
                 font-size: 12px;
+                letter-spacing: -1px;
+            }
+            .post-card-new-comment-button {
+                @include dimension(75px, 20px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #1fb339;
+                font-size: 11px;
+                border: none;
+                border-radius: 10px;
+                color: white;
             }
         }
         .post-card-comments-resume {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             .post-card-expand-icon {
                 @include dimension(20px, 20px);
                 position: absolute;
                 right: 5px;
                 bottom: 15px;
+                cursor: pointer;
             }
             .post-card-comments-resume-text {
                 font-size: 12px;
+                letter-spacing: -1px;
             }
         }
 
 
     }
+}
+
+.post-card-comment-display {
+    display: flex !important;
 }

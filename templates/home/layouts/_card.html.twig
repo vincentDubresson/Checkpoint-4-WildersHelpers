@@ -14,19 +14,38 @@
     </div>
     <div class="post-card-comments">
     {% if post.comments is defined and post.comments is not empty %}
+        <div class="post-card-comments-container">
+            {% for comment in post.comments %}
+                <div class="post-card-comment">
+                    <div class="post-card-comment-author-date">
+                       <img class="post-card-comment-avatar" src="{{ asset('' ~ comment.user.avatar ~ '') }}"/>
+                        <p class="post-card-comment-author">{{ comment.user.firstName }}, le {{ comment.creationDate|format_datetime('medium', 'none', locale='fr') }}</p>
+                    </div>
+                    <p class="post-card-comment-details">{{ comment.comment }}</p>
+                </div>
+            {% endfor %} 
+        </div>
+        {% if post.comments|length is same as 1 %}
         <div class="post-card-comments-resume">
             <img src="{{ asset('build/images/icons/expand_more.png') }}"
                 class="post-card-expand-icon" id="post-card-expand-icon"/>
-            <p class="post-card-comments-resume-text">OK</p>
+            <p class="post-card-comments-resume-text">1 commentaire pour cette annonce.</p>
         </div>
         {% else %}
+        <div class="post-card-comments-resume">
+            <img src="{{ asset('build/images/icons/expand_more.png') }}"
+                class="post-card-expand-icon" id="post-card-expand-icon"/>
+            <p class="post-card-comments-resume-text">{{ post.comments|length }} commentaires pour cette annonce.</p>
+        </div>
+        {% endif %}
+    {% else %}
         <div class="post-card-no-comment-resume">
             <p class="post-card-no-comment-resume-text">Pas de commentaire</p>
             <button type="button" class="post-card-new-comment-button">
                 Répondre
             </button> 
         </div>
-        {% endif %}
+    {% endif %}
         
     </div>
 </div>
