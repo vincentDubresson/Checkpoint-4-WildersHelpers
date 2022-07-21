@@ -7,8 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
+#[Vich\Uploadable]
 class Post
 {
     #[ORM\Id]
@@ -21,6 +24,9 @@ class Post
 
     #[ORM\Column(length: 255)]
     private ?string $picture = null;
+
+    #[Vich\UploadableField(mapping: 'poster_file', fileNameProperty: 'picture')]
+    private ?File $posterFile = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
@@ -162,5 +168,17 @@ class Post
         $this->user = $user;
 
         return $this;
+    }
+
+    public function setPosterFile(File $image = null): Post
+    {
+        $this->posterFile = $image;
+
+        return $this;
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
     }
 }

@@ -4,7 +4,7 @@
         <p class="post-card-title">{{ post.title }}</p>
     </div>
     <div class="post-card-picture-container">
-        <img class="post-card-picture" src="{{ asset('' ~ post.picture ~ '') }}"/>
+        <img class="post-card-picture" src="{{ asset('build/images/post/' ~ post.picture ~ '') }}"/>
     </div>
     <div class="post-card-author-date">
         <p class="post-card-author"><span class="post-card-author-color-{{ post.type.name }}">{{ post.user.firstName }}</span>, le {{ post.creationDate|format_datetime('medium', 'none', locale='fr') }}</p>

@@ -4,7 +4,7 @@
         <p class="post-card-title">{{ demand.title }}</p>
     </div>
     <div class="post-card-picture-container">
-        <img class="post-card-picture" src="{{ asset('' ~ demand.picture ~ '') }}"/>
+        <img class="post-card-picture" src="{{ asset('build/images/post/' ~ demand.picture ~ '') }}"/>
     </div>
     <div class="post-card-author-date">
         <p class="post-card-author"><span class="post-card-author-color-{{ demand.type.name }}">{{ demand.user.firstName }}</span>, le {{ demand.creationDate|format_datetime('medium', 'none', locale='fr') }}</p>
