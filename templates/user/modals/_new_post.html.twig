@@ -1,0 +1,12 @@
+<div class="user-list-add-post">
+    <div class="add-post-modal-close" id="add-post-modal-close">
+        <img class="add-post-close-icon" src="{{ asset('build/images/icons/close.png') }}"/>
+    </div>
+    <h1 class="user-list-add-post-title">Ajouter une annonce</h1>
+
+    {{ form_start(form, {attr: {class: 'user-list-add-post-form'}}) }}
+        {{ form_widget(form) }}
+        <input type="hidden" name="user" value="{{ app.user.id }}">
+        <button type="submit" class="add-post-form-button">Envoyer</button>
+    {{ form_end(form) }}
+</div>

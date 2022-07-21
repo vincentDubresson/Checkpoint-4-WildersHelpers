@@ -51,7 +51,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
         cursor: pointer;
         .user-posts-list-type-container {
             @include dimension(45%, 90%);

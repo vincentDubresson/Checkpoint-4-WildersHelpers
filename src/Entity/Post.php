@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -20,15 +21,21 @@ class Post
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Ce champ est obligatoire.')]
+    #[Assert\Length(
+        max: 255,
+        maxMessage: '255 caractères max.'
+    )]
     private ?string $title = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $picture = null;
+    private ?string $picture = 'empty.png';
 
     #[Vich\UploadableField(mapping: 'poster_file', fileNameProperty: 'picture')]
     private ?File $posterFile = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: 'Ce champ est obligatoire.')]
     private ?string $description = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
@@ -38,9 +45,11 @@ class Post
     private Collection $comments;
 
     #[ORM\ManyToOne(inversedBy: 'post')]
+    #[Assert\NotBlank(message: 'Ce champ est obligatoire.')]
     private ?Category $category = null;
 
     #[ORM\ManyToOne(inversedBy: 'post')]
+    #[Assert\NotBlank(message: 'Ce champ est obligatoire.')]
     private ?Type $type = null;
 
     #[ORM\ManyToOne(inversedBy: 'post')]

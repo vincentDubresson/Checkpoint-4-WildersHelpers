@@ -5,8 +5,6 @@ namespace App\Controller;
 use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
-use App\Repository\UserRepository;
-use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,17 +22,13 @@ class PostController extends AbstractController
     }
 
     #[Route('/new', name: 'app_post_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, PostRepository $postRepository, UserRepository $userRepository): Response
+    public function new(Request $request, PostRepository $postRepository): Response
     {
         $post = new Post();
-        $user = $userRepository->findOneBy(['firstName' => 'Vincent']);
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $newDate = new DateTime("now");
-            $post->setCreationDate($newDate);
-            $post->setUser($user);
             $postRepository->add($post, true);
 
             return $this->redirectToRoute('app_post_index', [], Response::HTTP_SEE_OTHER);

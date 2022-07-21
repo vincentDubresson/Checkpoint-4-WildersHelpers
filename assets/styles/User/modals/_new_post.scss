@@ -1,0 +1,132 @@
+.user-list-add {
+    position: absolute;
+    @include dimension(100vw, 100vh);
+    bottom: 0;
+    .user-list-add-post {
+        position: absolute;
+        left: -200%;
+        right: 0;
+        bottom: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        @include dimension(90%, 71%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: auto;
+        margin-top: 50px;
+        max-width: 500px;
+        padding-top: 20px;
+        gap: 10px;
+        background-color: rgba(240, 248, 255, 0.95);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
+        z-index: 3;
+        transition: 0.3s;
+        .add-post-modal-close {
+            @include dimension(30px, 30px);
+            @include absolutePositionRight(10px, 15px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            .add-post-close-icon {
+                @include dimension(100%, 100%);
+            }
+        }
+        .user-list-add-post-title {
+            font-family: $SouthParkFont;
+            font-size: $titleSize;
+        }
+        .user-list-add-post-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            #post {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    .add-post-form-label {
+                        font-family: $SouthParkFont;
+                        font-size: $titleSize;
+                    }
+                    .add-post-form-input {
+                        height: 30px;
+                        font-family: $SouthParkFont;
+                        font-size: $textSize;
+                        padding-left: 5px;
+                        width: 250px;
+                        border: none;
+                        border-radius: 5px;
+                        outline: none;
+                    }
+                    .add-post-form-textarea {
+                        height: 70px;
+                        width: 300px;
+                        font-family: $SouthParkFont;
+                        font-size: $textSize;
+                        padding-left: 5px;
+                        padding-top: 5px;
+                        border: none;
+                        border-radius: 5px;
+                        outline: none;
+                        resize: none;
+                    }
+                    .add-post-form-select {
+                        height: 30px;
+                        width: 150px;
+                        font-family: $SouthParkFont;
+                        font-size: $textSize;
+                        text-align: center;
+                        border: 1px solid gray;
+                        border-radius: 5px;
+                    }
+                }
+            }
+            .add-post-form-button {
+                @include dimension(165px, 30px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $redColor;
+                border: none;
+                border-radius: 20px;
+                font-family: $SouthParkFont;
+                font-size: calc(0.8rem + 0.5vw);
+                color: white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .add-post-form-label {
+        font-size: 20px !important;
+    }
+    .add-post-form-input {
+        font-size: 15px !important;
+    }
+    .add-post-form-textarea {
+        font-size: 15px !important;
+
+    }
+    .add-post-form-button {
+        font-size: 18px !important;
+        height: 27px !important;
+    }
+}
+
+.display-add-post {
+    left: 0 !important;
+}
