@@ -6,6 +6,7 @@ use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
+use App\Service\UserMailer;
 use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,6 +20,7 @@ class UserController extends AbstractController
         Request $request,
         PostRepository $postRepository,
         UserRepository $userRepository,
+        UserMailer $userMailer,
     ): Response {
         
         $post = new Post();
@@ -38,6 +40,7 @@ class UserController extends AbstractController
             $post->setCreationDate($newDate);
             $post->setUser($user);
             $postRepository->add($post, true);
+            $userMailer->addPostSendMail();
 
             return $this->redirectToRoute('app_user', [], Response::HTTP_SEE_OTHER);
         }

@@ -14,6 +14,7 @@ if (document.getElementById('user-posts-list-demands')) {
     const addPostFormSelect = document.querySelectorAll('.add-post-form-select');
     const addPostFormTextarea = document.querySelector('.add-post-form-textarea');
     const addPostFormFile = document.getElementById('post_posterFile_file');
+    const addPostFormButton = document.querySelector('.add-post-form-button');
 
     demandContainer.addEventListener('click', () => {
         allList.classList.add('display-none');
@@ -65,5 +66,7 @@ if (document.getElementById('user-posts-list-demands')) {
         addPostFormFile.value = '';
     })
 
-
+    addPostFormButton.addEventListener('click', () => {
+        alert('Merci pour cette nouvelle annonce ! ATTENTION ! Un mail a été envoyé pour prévenir le chef administrateur. Il vérifiera juste si tu n\'as pas mis de grosses bêtises !');
+    });
 }
