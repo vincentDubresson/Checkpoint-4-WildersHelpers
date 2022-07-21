@@ -27,7 +27,8 @@
             <h2 class="user-post-list-type-title">Tout</h2>
          </div>
       </div>
-      <div class="user-posts-list-container"
+      
+      <div class="user-posts-list-container display-none"
             id="user-posts-list-demands-container">
          {% for post in posts %}
             {% if post.type.name is same as "demande" %}
@@ -35,12 +36,18 @@
             {% endif %}
          {% endfor %}
       </div>
-      <div class="user-posts-list-container"
+      <div class="user-posts-list-container display-none"
             id="user-posts-list-offers-container">
          {% for post in posts %}
             {% if post.type.name is same as "offre" %}
                {% include "/home/layouts/_card.html.twig" %}
             {% endif %}
+         {% endfor %}
+      </div>
+      <div class="user-posts-list-container"
+            id="user-posts-list-all-container">
+         {% for post in posts %}
+               {% include "/home/layouts/_card.html.twig" %}
          {% endfor %}
       </div>
    </section>

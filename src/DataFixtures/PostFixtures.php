@@ -11,13 +11,62 @@ use Doctrine\Persistence\ObjectManager;
 class PostFixtures extends Fixture implements DependentFixtureInterface
 {
     private const POSTS = [
+        
         [
-            'title' => 'Quelqu\'un pour garder ma fille ?',
+            'title' => 'Whouaouh ! Quel super site !',
+            'picture' => 'build/images/post/aide_php.png',
+            'description' => 'Non je plaisante, je viens de tout casser ! :)',
+            'category' => 'Divers',
+            'type' => 'demande',
+            'user' => 'Thomas',
+        ],
+        [
+            'title' => 'Fusce in magna nulla Aenean.',
+            'picture' => 'build/images/post/history.jpg',
+            'description' => 'Suspendisse eu dolor sed justo lacinia iaculis. Mauris ut ex convallis, auctor erat id, vulputate nisl. Aliquam quis lobortis magna. Sed vulputate imperdiet nunc in.',
+            'category' => 'Divers',
+            'type' => 'offre',
+            'user' => 'Nicolas',
+        ],
+        [
+            'title' => 'Fusce in magna nulla Aenean.',
             'picture' => 'build/images/post/enfant.png',
-            'description' => 'Par pitié ! Est-ce qu\'il y aurait quelqu\'un qui peut garder ma fille pour que je puisse suivre mes cours de Symfony correctement ? Paiement à l\'heure :)',
+            'description' => 'Suspendisse eu dolor sed justo lacinia iaculis. Mauris ut ex convallis, auctor erat id, vulputate nisl. Aliquam quis lobortis magna. Sed vulputate imperdiet nunc in.',
             'category' => 'Garde',
             'type' => 'demande',
-            'user' => 'Célie',
+            'user' => 'Emmanuelle',
+        ],
+        [
+            'title' => 'Fusce in magna nulla Aenean.',
+            'picture' => 'build/images/post/computer.jpg',
+            'description' => 'Suspendisse eu dolor sed justo lacinia iaculis. Mauris ut ex convallis, auctor erat id, vulputate nisl. Aliquam quis lobortis magna. Sed vulputate imperdiet nunc in.',
+            'category' => 'Informatique',
+            'type' => 'offre',
+            'user' => 'Christopher',
+        ],
+        [
+            'title' => 'Fusce in magna nulla Aenean.',
+            'picture' => 'build/images/post/garden.jpeg',
+            'description' => 'Suspendisse eu dolor sed justo lacinia iaculis. Mauris ut ex convallis, auctor erat id, vulputate nisl. Aliquam quis lobortis magna. Sed vulputate imperdiet nunc in.',
+            'category' => 'Jardin',
+            'type' => 'offre',
+            'user' => 'Vincent',
+        ],
+        [
+            'title' => 'Fusce in magna nulla Aenean.',
+            'picture' => 'build/images/post/history.jpg',
+            'description' => 'Suspendisse eu dolor sed justo lacinia iaculis. Mauris ut ex convallis, auctor erat id, vulputate nisl. Aliquam quis lobortis magna. Sed vulputate imperdiet nunc in.',
+            'category' => 'Divers',
+            'type' => 'demande',
+            'user' => 'Cidjie',
+        ],
+        [
+            'title' => 'Fusce in magna nulla Aenean.',
+            'picture' => 'build/images/post/computer.jpg',
+            'description' => 'Suspendisse eu dolor sed justo lacinia iaculis. Mauris ut ex convallis, auctor erat id, vulputate nisl. Aliquam quis lobortis magna. Sed vulputate imperdiet nunc in.',
+            'category' => 'DevWeb',
+            'type' => 'demande',
+            'user' => 'Justine',
         ],
         [
             'title' => 'Besoin d\'aide en PHP',
@@ -26,6 +75,14 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             'category' => 'DevWeb',
             'type' => 'demande',
             'user' => 'Thomas',
+        ],
+        [
+            'title' => 'Si toi aussi tu aimes l\'histoire de Lyon.',
+            'picture' => 'build/images/post/history.jpg',
+            'description' => 'Je te propose une visite guidée de notre belle ville avec anecdotes historiques garanties ! Dégustation offerte dans la cave la plus prestigieuse du 5ème Arrondissement. 300€ la demi-journée !',
+            'category' => 'Divers',
+            'type' => 'offre',
+            'user' => 'Yannis',
         ],
         [
             'title' => 'Putain de div',
@@ -44,6 +101,14 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             'user' => 'Théo',
         ],
         [
+            'title' => 'Quelqu\'un pour garder ma fille ?',
+            'picture' => 'build/images/post/enfant.png',
+            'description' => 'Par pitié ! Est-ce qu\'il y aurait quelqu\'un qui peut garder ma fille pour que je puisse suivre mes cours de Symfony correctement ? Paiement à l\'heure :)',
+            'category' => 'Garde',
+            'type' => 'demande',
+            'user' => 'Célie',
+        ],
+        [
             'title' => 'Il n\'est jamais trop tard pour planter !',
             'picture' => 'build/images/post/garden.jpeg',
             'description' => 'Vous le savez, j\'adore entretenir mon jardin. C\'est pourquoi je propose d\'aider ceux qui n\'ont pas la main verte. Grâce à moi vos fruits et légumes pousseront ! Accepte le paiement en rosé :)',
@@ -51,22 +116,16 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
             'type' => 'offre',
             'user' => 'David',
         ],
-        [
-            'title' => 'Si toi aussi tu aimes l\'histoire de Lyon.',
-            'picture' => 'build/images/post/history.jpg',
-            'description' => 'Je te propose une visite guidée de notre belle ville avec anecdotes historiques garanties ! Dégustation offerte dans la cave la plus prestigieuse du 5ème Arrondissement. 300€ la demi-journée !',
-            'category' => 'Divers',
-            'type' => 'offre',
-            'user' => 'Yannis',
-        ],
     ];
 
     public function load(ObjectManager $manager): void
     {
+
         $postNumber = 1;
+        $dayDate = 10;
         foreach (self::POSTS as $post) {
             $wilderPost = new Post();
-            $newDate = new DateTime("2022-07-1$postNumber");
+            $newDate = new DateTime("2022-07-$dayDate");
             $wilderPost
                 ->setTitle($post['title'])
                 ->setPicture($post['picture'])
@@ -76,7 +135,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
                 ->setType($this->getReference('type_' . $post['type']))
                 ->setUser($this->getReference('user_' . $post['user']));
             $this->addReference('post_' . $postNumber, $wilderPost);
-
+            $dayDate++;
             $postNumber++;
             $manager->persist($wilderPost);
         }
