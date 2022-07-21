@@ -1,0 +1,15 @@
+<div class="post-card">
+    <div class="post-card-header">
+        <p class="post-card-category-{{ demand.type.name }}">{{ demand.category.name }}</p>
+        <p class="post-card-title">{{ demand.title }}</p>
+    </div>
+    <div class="post-card-picture-container">
+        <img class="post-card-picture" src="{{ asset('' ~ demand.picture ~ '') }}"/>
+    </div>
+    <div class="post-card-author-date">
+        <p class="post-card-author"><span class="post-card-author-color-{{ demand.type.name }}">{{ demand.user.firstName }}</span>, le {{ demand.creationDate|format_datetime('medium', 'none', locale='fr') }}</p>
+    </div>
+    <div class="post-card-description-container">
+        <p class="post-card-description">{{ demand.description }}</p>
+    </div>
+</div>

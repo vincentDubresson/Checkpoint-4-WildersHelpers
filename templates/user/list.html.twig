@@ -3,7 +3,46 @@
 {% block title %}Wilders Helpers - Liste{% endblock %}
 
 {% block body %}
+<section class="user-list-welcome">
+    <div class="user-list-welcome-content">
+        <h1 class="user-list-welcome-content-title">Ah ! Te re-voila {{ app.user.firstName }} !!<br>Quel plaisir de te revoir !</h1>
+        <p class="user-list-welcome-content-text">Viens voir les nouvelles annonces !</p>
+        <img class="user-list-welcome-content-picture"
+                src="{{ asset('build/images/divers/group_user.png') }}"/>
+    </div>
+</section>
 
-
+<section class="user-posts-list">
+      <div class="user-posts-list-types">
+         <div class="user-posts-list-type-container"
+               id="user-posts-list-demands">
+            <h2 class="user-post-list-type-title">Demandes</h2>
+         </div>
+        <div class="user-posts-list-type-container offers"
+               id="user-posts-list-offers">
+            <h2 class="user-post-list-type-title">Offres</h2>
+         </div>
+         <div class="user-posts-list-type-container all-announce button-evidence"
+               id="user-posts-list-all">
+            <h2 class="user-post-list-type-title">Tout</h2>
+         </div>
+      </div>
+      <div class="user-posts-list-container"
+            id="user-posts-list-demands-container">
+         {% for post in posts %}
+            {% if post.type.name is same as "demande" %}
+               {% include "/home/layouts/_card.html.twig" %}
+            {% endif %}
+         {% endfor %}
+      </div>
+      <div class="user-posts-list-container"
+            id="user-posts-list-offers-container">
+         {% for post in posts %}
+            {% if post.type.name is same as "offre" %}
+               {% include "/home/layouts/_card.html.twig" %}
+            {% endif %}
+         {% endfor %}
+      </div>
+   </section>
 
 {% endblock %}

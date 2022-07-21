@@ -1,4 +1,4 @@
-if (document.getElementById('wilders-team-link')) {
+if (document.getElementById('wilders-team-modal-close')) {
 
     const wildersTeamLink = document.getElementById('wilders-team-link');
     const flexibleMenu = document.getElementById('flexible-menu');

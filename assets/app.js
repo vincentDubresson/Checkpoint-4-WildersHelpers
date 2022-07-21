@@ -15,6 +15,7 @@ import './scripts/Layouts/_footer.js';
 import './scripts/Home/contact.js';
 import './scripts/Home/home.js';
 import './scripts/Home/modals/_wilders_team.js';
+import './scripts/User/list';
 
 
 require('bootstrap');

@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Type;
 use App\Form\ContactType;
 use App\Repository\ContactRepository;
 use App\Repository\PostRepository;
+use App\Repository\TypeRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,15 +20,19 @@ class HomeController extends AbstractController
     public function index(
         UserRepository $userRepository,
         PostRepository $postRepository,
+        TypeRepository $typeRepository,
     ): Response {
+        $offer = $typeRepository->findOneBy(['name' => 'offre']);
+        $demand = $typeRepository->findOneBy(['name' => 'demande']);
 
-        $posts = $postRepository->findBy([], ['id' => 'DESC']);
-
+        $offers = $postRepository->findByType($offer);
+        $demands = $postRepository->findByType($demand);
         $wilders = $userRepository->findBy([], ['id' => 'DESC']);
 
         return $this->render('home/index.html.twig', [
             'wilders' => $wilders,
-            'posts' => $posts,
+            'offers' => $offers,
+            'demands' => $demands,
         ]);
     }
 

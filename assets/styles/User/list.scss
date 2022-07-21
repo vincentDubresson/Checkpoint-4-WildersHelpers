@@ -1,0 +1,114 @@
+.user-list-welcome {
+    @include dimension(90%, 400px);
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto;
+    .user-list-welcome-content {
+        background-color: rgba(240, 248, 255, 0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 0px;
+        padding: 10px 10px 0 10px;
+        gap: 5px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
+        .user-list-welcome-content-title {
+            font-family: 'SouthPark', sans-serif;
+            font-size: calc(1rem + 0.5vw);
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .user-list-welcome-content-text {
+            font-family: $SouthParkFont;
+            font-size: calc(0.7rem + 0.5vw);
+            margin-bottom: 15px;
+        }
+        .user-list-welcome-content-picture {
+            width: 225px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.user-posts-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 70px;
+    gap: 20px;
+    .user-posts-list-types {
+        @include dimension(100%, 60px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        .user-posts-list-type-container {
+            @include dimension(45%, 90%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $greenColor;
+            transform: skew(30deg);
+            .user-post-list-type-title {
+                font-family: $SouthParkFont;
+                font-size: calc(0.8rem + 0.5vw);
+                transform: skew(-30deg);
+                margin-bottom: 0;
+            }
+        }
+    }
+    .user-posts-list-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto;
+        gap: 20px;
+    }
+}
+
+.offers {
+    background-color: $redColor !important;
+    color: white;
+}
+
+.all-announce {
+    background-color: #1fb339 !important;
+}
+
+
+@media screen and (min-width: 726px) {
+    .user-list-welcome-content-title {
+        font-size: 20px !important;
+    }
+    .user-list-welcome-content-text {
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .user-post-list-type-title {
+        font-size: 18px !important;
+    }
+}
+
+.display-none {
+    display: none !important;
+}
+
+.button-evidence {
+    transform: skew(30deg) scale(1.1) !important;
+    z-index: 2 !important;
+}

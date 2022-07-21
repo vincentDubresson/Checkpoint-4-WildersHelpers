@@ -32,10 +32,8 @@
          </div>
       </div>
       <div class="home-last-demands-container">
-      {% for post in posts %}
-         {% if post.type.name is same as "demande" %}
-            {% include "/home/layouts/_card.html.twig" %}
-         {% endif %}
+      {% for demand in demands %}
+            {% include "/home/layouts/_demand.html.twig" %}
       {% endfor %}
       </div>
       <button class="home-last-all-demands-button"
@@ -52,10 +50,8 @@
          </div>
       </div>
       <div class="home-last-offers-container">
-      {% for post in posts %}
-         {% if post.type.name is same as "offre" %}
-            {% include "/home/layouts/_card.html.twig" %}
-         {% endif %}
+      {% for offer in offers %}
+            {% include "/home/layouts/_offer.html.twig" %}
       {% endfor %}
       </div>
       <button class="home-last-all-offers-button"
