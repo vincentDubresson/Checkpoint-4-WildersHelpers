@@ -78,10 +78,37 @@
     .post-card-description-container {
         overflow-y: scroll;
         @include dimension(85%, 45px);
-        margin-bottom: 10px;
         .post-card-description {
             font-size: 10px;
             text-align: justify;
         }
+    }
+    .post-card-comments{
+        position: relative;
+        width: 90%;
+        border-top: 1px solid grey;
+        padding-top: 10px;
+        .post-card-no-comment-resume {
+            display: flex;
+            justify-content: space-between;
+            .post-card-no-comment-resume-text {
+                font-size: 12px;
+            }
+        }
+        .post-card-comments-resume {
+            display: flex;
+            justify-content: space-between;
+            .post-card-expand-icon {
+                @include dimension(20px, 20px);
+                position: absolute;
+                right: 5px;
+                bottom: 15px;
+            }
+            .post-card-comments-resume-text {
+                font-size: 12px;
+            }
+        }
+
+
     }
 }

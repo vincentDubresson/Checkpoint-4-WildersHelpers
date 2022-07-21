@@ -14,37 +14,37 @@ class CommentFixtures extends Fixture implements DependentFixtureInterface
         [
             'comment' => 'Personne ?? :(',
             'user' => 'Célie',
-            'post' => '1'
+            'post' => '12'
         ],
         [
             'comment' => 'C\'est pas marrant :(',
             'user' => 'Célie',
-            'post' => '1'
+            'post' => '12'
         ],
         [
             'comment' => 'J\'vous jure elle est sage... :\'(',
             'user' => 'Célie',
-            'post' => '1'
+            'post' => '12'
         ],
         [
             'comment' => 'Vocal sur Slack ?! Je t\'expliquerai ;)',
             'user' => 'Vincent',
-            'post' => '3'
+            'post' => '10'
         ],
         [
             'comment' => 'Ca sent l\'arnaque... Y a rien qui pousse en plein Juillet avec cette chaleur !',
             'user' => 'Ludovic',
-            'post' => '5'
+            'post' => '13'
         ],
         [
             'comment' => 'Je me disais la même ^^',
             'user' => 'Emmanuelle',
-            'post' => '5'
+            'post' => '13'
         ],
         [
             'comment' => 'Y a des caves à bière ??!!',
             'user' => 'Justine',
-            'post' => '6'
+            'post' => '9'
         ],
     ];
 

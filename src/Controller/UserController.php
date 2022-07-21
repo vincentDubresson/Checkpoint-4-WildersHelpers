@@ -46,6 +46,7 @@ class UserController extends AbstractController
         }
 
         $posts = $postRepository->findBy([], ['id' => 'DESC']);
+        //var_dump($posts); die();
 
         return $this->renderForm('user/list.html.twig', [
             'posts' => $posts,

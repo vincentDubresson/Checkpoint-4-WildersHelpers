@@ -12,4 +12,21 @@
     <div class="post-card-description-container">
         <p class="post-card-description">{{ post.description }}</p>
     </div>
+    <div class="post-card-comments">
+    {% if post.comments is defined and post.comments is not empty %}
+        <div class="post-card-comments-resume">
+            <img src="{{ asset('build/images/icons/expand_more.png') }}"
+                class="post-card-expand-icon" id="post-card-expand-icon"/>
+            <p class="post-card-comments-resume-text">OK</p>
+        </div>
+        {% else %}
+        <div class="post-card-no-comment-resume">
+            <p class="post-card-no-comment-resume-text">Pas de commentaire</p>
+            <button type="button" class="post-card-new-comment-button">
+                Répondre
+            </button> 
+        </div>
+        {% endif %}
+        
+    </div>
 </div>
