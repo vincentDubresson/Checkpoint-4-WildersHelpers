@@ -29,7 +29,7 @@ if (document.querySelectorAll('.carousel-picture-general-style')) {
         });
     });
 
-/*     // API Blagues Fetch
+    // API Blagues Fetch
     for (let i = 17; i >= 1; i--) {
         fetch('https://www.blagues-api.fr/api/type/dev/random', {
             headers: {
@@ -41,5 +41,5 @@ if (document.querySelectorAll('.carousel-picture-general-style')) {
             carouselJoke[i].innerHTML = data.joke;
             carouselAnswer[i].innerHTML = data.answer;
         })
-    }; */
+    };
 }
