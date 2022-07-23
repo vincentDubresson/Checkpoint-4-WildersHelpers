@@ -42,3 +42,25 @@ body {
     background-position: 0% 50%;
     background-attachment: fixed;
 }
+
+@media screen and (max-width: 399px) {
+    body {
+        background-image: url('../images/background/min_width_bckg.jpg') !important;
+        background-position: 0% 0% !important;
+        overflow-y: none !important;
+        * {
+            display: none !important;
+        }
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    body {
+        background-image: url('../images/background/max_width_bckg.jpg') !important;
+        background-position: 0% 0% !important;
+        overflow-y: none !important;
+        * {
+            display: none !important;
+        }
+    }
+}

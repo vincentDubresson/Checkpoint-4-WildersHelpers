@@ -15,8 +15,8 @@ if (document.getElementById('user-posts-list-demands')) {
     const addPostFormTextarea = document.querySelector('.add-post-form-textarea');
     const addPostFormFile = document.getElementById('post_posterFile_file');
     const addPostFormButton = document.querySelector('.add-post-form-button');
-    const commentExpandIcon = document.querySelectorAll('.post-card-expand-icon');
-    const commentDiv = document.querySelectorAll('.post-card-comment');
+    //const commentExpandIcon = document.querySelectorAll('.post-card-expand-icon');
+    //const commentDiv = document.querySelectorAll('.post-card-comment');
 
     demandContainer.addEventListener('click', () => {
         allList.classList.add('display-none');
