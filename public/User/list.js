@@ -15,6 +15,8 @@ if (document.getElementById('user-posts-list-demands')) {
     const addPostFormTextarea = document.querySelector('.add-post-form-textarea');
     const addPostFormFile = document.getElementById('post_posterFile_file');
     const addPostFormButton = document.querySelector('.add-post-form-button');
+    const body = document.getElementById('body');
+
     //const commentExpandIcon = document.querySelectorAll('.post-card-expand-icon');
     //const commentDiv = document.querySelectorAll('.post-card-comment');
 
@@ -54,10 +56,13 @@ if (document.getElementById('user-posts-list-demands')) {
         thirdSpan.classList.remove('third-line');
         addPostModal.classList.add('display-add-post');
         flexibleMenu.classList.remove('header-menu-display');
+        body.classList.add('body-without-overflow');
+
     });
 
     addPostCloseModalIcon.addEventListener('click', () => {
         addPostModal.classList.remove('display-add-post');
+        body.classList.remove('body-without-overflow');
         addPostFormInput.forEach(input => {
             input.value = '';
         });

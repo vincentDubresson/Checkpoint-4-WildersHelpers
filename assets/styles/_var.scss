@@ -43,6 +43,10 @@ body {
     background-attachment: fixed;
 }
 
+.body-without-overflow {
+    overflow-y: hidden !important;
+}
+
 @media screen and (max-width: 399px) {
     body {
         background-image: url('../images/background/min_width_bckg.jpg') !important;

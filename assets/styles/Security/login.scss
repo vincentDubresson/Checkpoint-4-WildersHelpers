@@ -1,6 +1,7 @@
 @import '../_var.scss';
 
 .login-form {
+    position: relative;
     @include dimension(395px, 600px);
     display: flex;
     flex-direction: column;
@@ -13,6 +14,13 @@
     background-color: rgba(240, 248, 255, 0.9);
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
+    .login-return-icon {
+        @include dimension(25px, 25px);
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
     .login-form-logo {
         width: 70%;
     }

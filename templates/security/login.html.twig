@@ -4,6 +4,8 @@
 
 {% block body %}
 <main class="login-form">
+    <img class="login-return-icon" onclick="history.back()"
+        src="{{ asset('build/images/icons/close.png') }}"/>
     <img class="login-form-logo" src="{{ asset('build/images/logo/logo_big.png') }}"/>
     <form method="post">
         {% if error %}
