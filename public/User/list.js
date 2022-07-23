@@ -18,7 +18,8 @@ if (document.getElementById('user-posts-list-demands')) {
     const body = document.getElementById('body');
     const postCardsDetailButton = document.querySelectorAll('.post-card-details-button');
     const postCardsDetail = document.querySelectorAll('.details-post-card');
-    
+    const overlays = document.querySelectorAll('.details-post-card-overlay');
+
     console.log(postCardsDetailButton);
     console.log(postCardsDetail);
 
@@ -26,6 +27,8 @@ if (document.getElementById('user-posts-list-demands')) {
         postCardsDetailButton[i].addEventListener('click', () => {
             console.log(i);
             postCardsDetail[i].classList.add('details-post-card-display');
+            overlays[i].classList.add('overlay-display');
+            body.classList.add('body-without-overflow');
         });
     }
 

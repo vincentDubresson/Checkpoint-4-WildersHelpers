@@ -1,66 +1,86 @@
 @import '../../_var.scss';
 
-.details-post-card {
-    position: fixed;
-    top: 17%;
+.details-post-card-overlay {
+    position: none; // fixed
+    top: 0;
     left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    display: none; //flex
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
     width: 100%;
-    max-width: 320px;
-    padding-bottom: 10px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px rgba(148, 148, 148, 0.4);
-    font-family: $SouthParkFont;
-    z-index: 5;
-    .post-card-header {
-        @include dimension(90%, 30px);
-        display: flex;
+    height: 100%;
+    z-index: 1000;
+    background-color: rgba(83, 83, 83, 0.4);
+    .details-post-card {
+        position: fixed;
+        top: 15%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        display: none; //flex
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        .post-card-category-demande {
-            color: $greenColor;
-            font-size: 12px;
-            margin-bottom: 0;
-            line-height: 16px;
-        }
-        .post-card-category-offre {
-            color: $redColor;
-            font-size: 12px;
-            margin-bottom: 0;
-            line-height: 16px;
-        }
-        .post-card-title {
-            font-size: 12px;
-            margin-bottom: 0;
-            line-height: 10px;
-        }
-    }
-    .post-card-picture-container {
-        width: 90%;
-        display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        .post-card-picture {
-            width: 80%;
-            height: 310px;
-            border-radius: 10px;
-            border: 1px solid gray;
+        gap: 10px;
+        width: 100%;
+        max-width: 320px;
+        padding-bottom: 10px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px 5px rgba(27, 27, 27, 0.2);
+        font-family: $SouthParkFont;
+        z-index: 1001;
+        .post-card-header {
+            @include dimension(90%, 30px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            .post-card-category-demande {
+                color: $greenColor;
+                font-size: 12px;
+                margin-bottom: 0;
+                line-height: 16px;
+            }
+            .post-card-category-offre {
+                color: $redColor;
+                font-size: 12px;
+                margin-bottom: 0;
+                line-height: 16px;
+            }
+            .post-card-title {
+                font-size: 12px;
+                margin-bottom: 0;
+                line-height: 10px;
+            }
         }
-    }
-    .post-card-author-date {
-        width: 90%;
-        display: flex;
-        justify-content: center;
+        .post-card-picture-container {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .post-card-picture {
+                width: 80%;
+                height: 310px;
+                border-radius: 10px;
+                border: 1px solid gray;
+            }
+        }
+        .post-card-author-date {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            .post-card-author {
+                font-size: 12px;
+                margin-bottom: 0;
+                text-align: left;
+                .post-card-author-color-demande {
+                    color: $greenColor;
+                }
+                .post-card-author-color-offre {
+                    color: $redColor;
+                }
+            }
+        }
         .post-card-author {
             font-size: 12px;
             margin-bottom: 0;
@@ -72,117 +92,113 @@
                 color: $redColor;
             }
         }
-    }
-    .post-card-author {
-        font-size: 12px;
-        margin-bottom: 0;
-        text-align: left;
-        .post-card-author-color-demande {
-            color: $greenColor;
+        .post-card-description-container {
+            overflow-y: scroll;
+            @include dimension(85%, 45px);
+            .post-card-description {
+                font-size: 10px;
+                text-align: justify;
+            }
         }
-        .post-card-author-color-offre {
-            color: $redColor;
-        }
-    }
-    .post-card-description-container {
-        overflow-y: scroll;
-        @include dimension(85%, 45px);
-        .post-card-description {
-            font-size: 10px;
-            text-align: justify;
-        }
-    }
-    .post-card-comments{
-        position: relative;
-        width: 90%;
-        top: 0;
-        border-top: 1px solid grey;
-        padding-top: 10px;
-        z-index: 1;
-        .post-card-comments-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            .post-card-comment {
+        .post-card-comments{
+            position: relative;
+            width: 90%;
+            top: 0;
+            border-top: 1px solid grey;
+            padding-top: 10px;
+            z-index: 1;
+            .post-card-comments-container {
+                overflow-y: scroll;
                 width: 100%;
-                display: flex; //flex
+                display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
-                margin-bottom: 10px;
-                transition: 0.5s;
-                .post-card-comment-author-date {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
+                max-height: 135px;
+                gap: 5px;
+                //padding-top: 30px;
+                margin-bottom: 5px;
+                .post-card-comment {
                     width: 100%;
-                    gap: 15px;
-                    .post-card-comment-avatar {
-                        @include dimension(25px, 25px);
+                    display: flex; //flex
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 10px;
+                    transition: 0.5s;
+                    .post-card-comment-author-date {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 100%;
+                        gap: 15px;
+                        .post-card-comment-avatar {
+                            @include dimension(25px, 25px);
+                        }
+                        .post-card-comment-author {
+                            font-size: 11px;
+                            margin-bottom: 0;
+                        }
                     }
-                    .post-card-comment-author {
-                        font-size: 11px;
+                    .post-card-comment-details {
+                        font-size: 10px;
+                        width: 72%;
+                        float: right;
                         margin-bottom: 0;
                     }
                 }
-                .post-card-comment-details {
-                    font-size: 10px;
-                    width: 72%;
-                    float: right;
+            }
+            .post-card-no-comment-resume {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .post-card-no-comment-resume-text {
+                    font-size: 11px;
+                    letter-spacing: -1px;
                     margin-bottom: 0;
+                }
+                .post-card-details-button {
+                    @include dimension(75px, 20px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #1fb339;
+                    font-size: 11px;
+                    border: none;
+                    border-radius: 10px;
+                    color: white;
+                }
+            }
+            .post-card-comments-resume {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .post-card-comments-resume-text {
+                    font-size: 11px;
+                    letter-spacing: -1px;
+                    margin-bottom: 0;
+                }
+                .post-card-details-button {
+                    @include dimension(75px, 20px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #1fb339;
+                    font-size: 11px;
+                    border: none;
+                    border-radius: 10px;
+                    color: white;
                 }
             }
         }
-        .post-card-no-comment-resume {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .post-card-no-comment-resume-text {
-                font-size: 11px;
-                letter-spacing: -1px;
-                margin-bottom: 0;
-            }
-            .post-card-details-button {
-                @include dimension(75px, 20px);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: #1fb339;
-                font-size: 11px;
-                border: none;
-                border-radius: 10px;
-                color: white;
-            }
-        }
-        .post-card-comments-resume {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .post-card-comments-resume-text {
-                font-size: 11px;
-                letter-spacing: -1px;
-                margin-bottom: 0;
-            }
-            .post-card-details-button {
-                @include dimension(75px, 20px);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: #1fb339;
-                font-size: 11px;
-                border: none;
-                border-radius: 10px;
-                color: white;
-            }
-        }
-
-
     }
 }
 
+
 .details-post-card-display {
     display: flex !important;
+}
+
+.overlay-display {
+    position: fixed !important;
 }

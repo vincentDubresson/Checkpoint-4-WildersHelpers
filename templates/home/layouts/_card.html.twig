@@ -1,5 +1,7 @@
 <div class="post-card">
+    <div class="details-post-card-overlay">
     {% include "user/modals/_post_details.html.twig" %}
+    </div>
     <div class="post-card-header">
         <p class="post-card-category-{{ post.type.name }}">{{ post.category.name }}</p>
         <p class="post-card-title">{{ post.title }}</p>
