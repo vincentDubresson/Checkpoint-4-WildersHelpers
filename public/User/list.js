@@ -16,6 +16,18 @@ if (document.getElementById('user-posts-list-demands')) {
     const addPostFormFile = document.getElementById('post_posterFile_file');
     const addPostFormButton = document.querySelector('.add-post-form-button');
     const body = document.getElementById('body');
+    const postCardsDetailButton = document.querySelectorAll('.post-card-details-button');
+    const postCardsDetail = document.querySelectorAll('.details-post-card');
+    
+    console.log(postCardsDetailButton);
+    console.log(postCardsDetail);
+
+    for (let i = 0; i < postCardsDetailButton.length; i++) {
+        postCardsDetailButton[i].addEventListener('click', () => {
+            console.log(i);
+            postCardsDetail[i].classList.add('details-post-card-display');
+        });
+    }
 
     demandContainer.addEventListener('click', () => {
         allList.classList.add('display-none');

@@ -1,8 +1,14 @@
 @import '../../_var.scss';
 
-.post-card {
-    position: relative;
-    display: flex;
+.details-post-card {
+    position: fixed;
+    top: 17%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    display: none; //flex
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -12,8 +18,9 @@
     padding-bottom: 10px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px rgba(95, 95, 95, 0.3);
+    box-shadow: 5px 5px 5px 5px rgba(148, 148, 148, 0.4);
     font-family: $SouthParkFont;
+    z-index: 5;
     .post-card-header {
         @include dimension(90%, 30px);
         display: flex;
@@ -101,7 +108,7 @@
             gap: 5px;
             .post-card-comment {
                 width: 100%;
-                display: none; //flex
+                display: flex; //flex
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
@@ -129,6 +136,27 @@
                 }
             }
         }
+        .post-card-no-comment-resume {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .post-card-no-comment-resume-text {
+                font-size: 11px;
+                letter-spacing: -1px;
+                margin-bottom: 0;
+            }
+            .post-card-details-button {
+                @include dimension(75px, 20px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #1fb339;
+                font-size: 11px;
+                border: none;
+                border-radius: 10px;
+                color: white;
+            }
+        }
         .post-card-comments-resume {
             display: flex;
             justify-content: space-between;
@@ -150,9 +178,11 @@
                 color: white;
             }
         }
+
+
     }
 }
 
-.post-card-comment-display {
+.details-post-card-display {
     display: flex !important;
 }

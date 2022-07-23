@@ -1,5 +1,4 @@
-<div class="post-card">
-    {% include "user/modals/_post_details.html.twig" %}
+<div class="details-post-card">
     <div class="post-card-header">
         <p class="post-card-category-{{ post.type.name }}">{{ post.category.name }}</p>
         <p class="post-card-title">{{ post.title }}</p>
@@ -29,24 +28,15 @@
         {% if post.comments|length is same as 1 %}
         <div class="post-card-comments-resume">
             <p class="post-card-comments-resume-text">1 commentaire pour cette annonce.</p>
-            <button type="button" class="post-card-details-button">
-                Détails
-            </button> 
         </div>
         {% else %}
         <div class="post-card-comments-resume">
             <p class="post-card-comments-resume-text">{{ post.comments|length }} commentaires pour cette annonce.</p>
-            <button type="button" class="post-card-details-button">
-                Détails
-            </button> 
         </div>
         {% endif %}
     {% else %}
-        <div class="post-card-comments-resume">
-            <p class="post-card-comments-resume-text">Pas de commentaire</p>
-            <button type="button" class="post-card-details-button">
-                Détails
-            </button> 
+        <div class="post-card-no-comment-resume">
+            <p class="post-card-no-comment-resume-text">Pas de commentaire</p>
         </div>
     {% endif %}
         
