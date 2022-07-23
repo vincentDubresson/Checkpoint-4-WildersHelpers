@@ -46,7 +46,6 @@ class UserController extends AbstractController
         }
 
         $posts = $postRepository->findBy([], ['id' => 'DESC']);
-        //var_dump($posts); die();
 
         return $this->renderForm('user/list.html.twig', [
             'posts' => $posts,
@@ -57,10 +56,6 @@ class UserController extends AbstractController
     #[Route('/user/post/add', name: 'app_user_add_post')]
     public function addPost(): Response
     {
-
-
-        
         return $this->redirectToRoute('app_post_index', [], Response::HTTP_SEE_OTHER);
-
     }
 }

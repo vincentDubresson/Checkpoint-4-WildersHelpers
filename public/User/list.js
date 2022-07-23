@@ -17,9 +17,6 @@ if (document.getElementById('user-posts-list-demands')) {
     const addPostFormButton = document.querySelector('.add-post-form-button');
     const body = document.getElementById('body');
 
-    //const commentExpandIcon = document.querySelectorAll('.post-card-expand-icon');
-    //const commentDiv = document.querySelectorAll('.post-card-comment');
-
     demandContainer.addEventListener('click', () => {
         allList.classList.add('display-none');
         demandsList.classList.remove('display-none');
@@ -77,10 +74,4 @@ if (document.getElementById('user-posts-list-demands')) {
         alert('Merci pour cette nouvelle annonce ! ATTENTION ! Un mail a été envoyé pour prévenir le chef administrateur. Il vérifiera juste si tu n\'as pas mis de grosses bêtises !');
     });
 
-/*     for (let i = 0; i < commentExpandIcon.length; i++) {
-        commentExpandIcon[i].addEventListener('click', () => {
-            console.log('ok');
-            commentDiv[i].classList.add('post-card-comment-display');
-        })
-    } */
 }

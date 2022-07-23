@@ -7,11 +7,7 @@
     <div class="flexible-menu" id="flexible-menu">
         <img class="header-logged-avatar" src="{{ asset('' ~ app.user.avatar ~ '') }}"/>
         <div class="hidden-menu" id="hidden-menu">
-            {% for role in app.user.roles %}
-                {% if role is same as "ROLE_ADMIN" %}
-                    <a class="burger-menu-links" id="wilders-team-link">Acceder au dashboard</a>
-                {% endif %}
-            {% endfor %}
+            <a class="burger-menu-links" id="wilders-team-link">Acceder au dashboard</a>
             <a class="burger-menu-links" id="burger-menu-add-post-link" href="#">Ajouter une annonce</a>
             <a class="burger-menu-links" href="{{ path('app_logout') }}">Se déconnecter</a>
         </div>    
