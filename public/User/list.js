@@ -19,6 +19,7 @@ if (document.getElementById('user-posts-list-demands')) {
     const postCardsDetailButton = document.querySelectorAll('.post-card-details-button');
     const postCardsDetail = document.querySelectorAll('.details-post-card');
     const overlays = document.querySelectorAll('.details-post-card-overlay');
+    const postCardsDetailCloseIcon = document.querySelectorAll('.details-return-icon');
 
     console.log(postCardsDetailButton);
     console.log(postCardsDetail);
@@ -29,6 +30,12 @@ if (document.getElementById('user-posts-list-demands')) {
             postCardsDetail[i].classList.add('details-post-card-display');
             overlays[i].classList.add('overlay-display');
             body.classList.add('body-without-overflow');
+
+            postCardsDetailCloseIcon[i].addEventListener('click', () => {
+                postCardsDetail[i].classList.remove('details-post-card-display');
+                overlays[i].classList.remove('overlay-display');
+                body.classList.remove('body-without-overflow');
+            });
         });
     }
 

@@ -1,4 +1,6 @@
 <div class="details-post-card">
+    <img class="details-return-icon"
+        src="{{ asset('build/images/icons/close.png') }}"/>
     <div class="post-card-header">
         <p class="post-card-category-{{ post.type.name }}">{{ post.category.name }}</p>
         <p class="post-card-title">{{ post.title }}</p>
@@ -40,5 +42,5 @@
         </div>
     {% endif %}
     </div>
-    
+
 </div>
