@@ -42,7 +42,7 @@
             </div>
         {% endfor %} 
         </div>
-        <form class="add-comment" method="POST" action="{{ path('app_user_add_comment', {userId: post.user.id, postId: post.id}) }}">
+        <form class="add-comment" method="POST" action="{{ path('app_user_add_comment', {userId: app.user.id, postId: post.id}) }}">
             <input type="textarea" name="comment" class="add-comment-textarea" required>
             <button class="add-comment-submit-button" type="submit">Envoyer</button>
         </form>
