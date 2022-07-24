@@ -61,10 +61,23 @@ body {
 @media screen and (min-width: 1921px) {
     body {
         background-image: url('../images/background/max_width_bckg.jpg') !important;
-        background-position: 0% 0% !important;
+        background-position: 0% center !important;
         overflow-y: none !important;
         * {
             display: none !important;
         }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .body-dashboard {
+        background-image: url('../images/background/dash_min_width_bckg.jpg') !important;
+        background-position-x: center !important;
+        background-position-y: 0% !important;
+        overflow-y: none !important;
+        * {
+            display: none !important;
+        }
+
     }
 }

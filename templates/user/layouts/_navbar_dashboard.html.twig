@@ -1,0 +1,11 @@
+<section class="dashboard-navbar">
+    <a class="dashboard-navbar-link" href="{{ path('app_post_index', {userId: app.user.id}) }}">Mes posts</a>
+    <a class="dashboard-navbar-link" href="{{ path('app_comment_index', {userId: app.user.id}) }}">Mes commentaires</a>
+    {% for role in app.user.roles %}
+        {% if role is same as "ROLE_ADMIN" %}
+            <a class="dashboard-navbar-link" href="{{ path('app_admin_post_index') }}">Tous les posts</a>
+            <a class="dashboard-navbar-link" href="{{ path('app_admin_comment_index') }}">Tous les commentaires</a>
+            <a class="dashboard-navbar-link" href="{{ path('app_admin_contact_index') }}">Messages</a>
+        {% endif %}
+    {% endfor %}
+</section>

@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_dashboard.html.twig' %}
 
 {% block title %}Comment{% endblock %}
 
 {% block body %}
-    <h1>Comment</h1>
+    <h1 class="dashboard-title">Détail du commentaire</h1>
 
-    <table class="table">
+    <table class="dashboard-table table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -21,10 +21,9 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('app_comment_index', {userId: app.user.id}) }}">back to list</a>
-
-    <a href="{{ path('app_comment_edit', {userId: app.user.id, commentId: comment.id}) }}">edit</a>
-
-    {{ include('comment/_delete_form.html.twig') }}
+    <div class="bg-light w-25 m-auto d-flex justify-content-around align-items-center">
+        <a href="{{ path('app_comment_index', {userId: app.user.id}) }}">back to list</a>
+        <a href="{{ path('app_comment_edit', {userId: app.user.id, commentId: comment.id}) }}">edit</a>
+        {{ include('user/comment/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
