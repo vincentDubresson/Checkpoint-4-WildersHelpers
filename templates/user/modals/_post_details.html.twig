@@ -15,22 +15,22 @@
         <p class="post-card-description">{{ post.description }}</p>
     </div>
     <div class="post-card-comments">
-    {% if post.comments is defined and post.comments is not empty %}
+        {% if post.comments is defined and post.comments is not empty %}
 
-        {% if post.comments|length is same as 1 %}
-        <div class="post-card-comments-resume">
-            <p class="post-card-comments-resume-text">1 commentaire pour cette annonce.</p>
-        </div>
+            {% if post.comments|length is same as 1 %}
+            <div class="post-card-comments-resume">
+                <p class="post-card-comments-resume-text">1 commentaire pour cette annonce.</p>
+            </div>
+            {% else %}
+            <div class="post-card-comments-resume">
+                <p class="post-card-comments-resume-text">{{ post.comments|length }} commentaires pour cette annonce.</p>
+            </div>
+            {% endif %}
         {% else %}
-        <div class="post-card-comments-resume">
-            <p class="post-card-comments-resume-text">{{ post.comments|length }} commentaires pour cette annonce.</p>
-        </div>
+            <div class="post-card-no-comment-resume">
+                <p class="post-card-no-comment-resume-text">Pas de commentaire</p>
+            </div>
         {% endif %}
-    {% else %}
-        <div class="post-card-no-comment-resume">
-            <p class="post-card-no-comment-resume-text">Pas de commentaire</p>
-        </div>
-    {% endif %}
         <div class="post-card-comments-container">
         {% for comment in post.comments %}
             <div class="post-card-comment">
@@ -44,7 +44,7 @@
         </div>
         <form class="add-comment" method="POST" action="{{ path('app_user_add_comment', {userId: post.user.id, postId: post.id}) }}">
             <input type="textarea" name="comment" class="add-comment-textarea" required>
-            <button type="submit">send</button>
+            <button class="add-comment-submit-button" type="submit">Envoyer</button>
         </form>
     </div>
 

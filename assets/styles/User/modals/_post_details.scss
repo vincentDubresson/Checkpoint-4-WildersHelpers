@@ -124,7 +124,6 @@
                 align-items: center;
                 max-height: 135px;
                 gap: 5px;
-                //padding-top: 30px;
                 margin-bottom: 5px;
                 .post-card-comment {
                     width: 100%;
@@ -154,6 +153,28 @@
                         float: right;
                         margin-bottom: 0;
                     }
+                }
+            }
+            .add-comment {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .add-comment-textarea {
+                    border-radius: 5px;
+                    font-size: 11px;
+                    height: 30px;
+                    width: 210px;
+                }
+                .add-comment-submit-button {
+                    @include dimension(75px, 20px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #1fb339;
+                    font-size: 11px;
+                    border: none;
+                    border-radius: 10px;
+                    color: white;
                 }
             }
             .post-card-no-comment-resume {
@@ -202,6 +223,44 @@
     }
 }
 
+
+@media screen and (min-width: 900px) {
+    .details-post-card {
+        width: 750px !important;
+        max-width: 750px !important;
+        align-items: flex-start !important;
+        padding: 20px 40px !important;
+        .post-card-header {
+            justify-content: flex-start !important;
+            width: 40% !important;
+        }
+        .post-card-picture-container {
+            width: 40% !important;
+        }
+        .post-card-author-date {
+            justify-content: flex-start !important;
+            width: 40% !important;
+        }
+        .post-card-description-container {
+            justify-content: flex-start !important;
+            width: 40% !important;
+        }
+        .post-card-comments {
+            position: absolute !important;
+            width: 41% !important;
+            top: 11% !important;
+            right: 3% !important;
+            border-top: none !important;
+            .post-card-comments-container {
+                height: 249px !important;
+                max-height: 249px !important;
+            }
+        }
+        .add-comment-textarea {
+            width: 225px !important;
+        }
+    }
+}
 
 .details-post-card-display {
     display: flex !important;
