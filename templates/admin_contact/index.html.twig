@@ -25,7 +25,7 @@
                 <td>{{ contact.email }}</td>
                 <td>{{ contact.comment }}</td>
                 <td>
-                    <a href="{{ path('app_admin_contact_show', {'id': contact.id}) }}">show</a>
+                    <a class="text-decoration-none text-secondary" href="{{ path('app_admin_contact_show', {'id': contact.id}) }}">show</a>
                 </td>
             </tr>
         {% else %}

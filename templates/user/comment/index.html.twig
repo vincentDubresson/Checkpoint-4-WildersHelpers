@@ -21,8 +21,8 @@
                 <td>{{ comment.comment }}</td>
                 <td>{{ comment.creationDate ? comment.creationDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_comment_show', {userId: app.user.id, commentId: comment.id}) }}">show</a>
-                    <a href="{{ path('app_comment_edit', {userId: app.user.id, commentId: comment.id}) }}">edit</a>
+                    <a class="text-decoration-none text-secondary pe-2" href="{{ path('app_comment_show', {userId: app.user.id, commentId: comment.id}) }}">show</a>
+                    <a class="text-decoration-none text-secondary" href="{{ path('app_comment_edit', {userId: app.user.id, commentId: comment.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

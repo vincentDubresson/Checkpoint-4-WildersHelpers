@@ -3,11 +3,15 @@
 {% block title %}Edit Comment{% endblock %}
 
 {% block body %}
-    <h1>Edit Comment</h1>
+    <h1 class="dashboard-title">Edit Comment</h1>
 
-    {{ include('comment/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="dashboard-table">
+        {{ include('user/comment/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
 
-    <a href="{{ path('app_comment_index', {userId: app.user.id}) }}">back to list</a>
+    <div class="bg-light w-25 m-auto d-flex justify-content-around align-items-center">
+        <a class="text-decoration-none text-secondary" href="{{ path('app_comment_index', {userId: app.user.id}) }}">back to list</a>
+        {{ include('user/comment/_delete_form.html.twig') }}
+    </div>
 
-    {{ include('comment/_delete_form.html.twig') }}
 {% endblock %}

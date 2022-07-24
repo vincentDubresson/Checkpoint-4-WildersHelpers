@@ -25,8 +25,8 @@
                 <td>{{ post.description }}</td>
                 <td>{{ post.creationDate ? post.creationDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_admin_post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('app_admin_post_edit', {'id': post.id}) }}">edit</a>
+                    <a class="text-decoration-none text-secondary pe-2" href="{{ path('app_admin_post_show', {'id': post.id}) }}">show</a>
+                    <a class="text-decoration-none text-secondary" href="{{ path('app_admin_post_edit', {'id': post.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
