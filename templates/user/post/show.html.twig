@@ -30,8 +30,8 @@
         </tbody>
     </table>
     <div class="bg-light w-25 m-auto d-flex justify-content-around align-items-center">
-        <a href="{{ path('app_post_index', {userId: app.user.id}) }}">back to list</a>
-        <a href="{{ path('app_post_edit', {userId: app.user.id, postId: post.id}) }}">edit</a>
+        <a class="text-decoration-none text-secondary" href="{{ path('app_post_index', {userId: app.user.id}) }}">back to list</a>
+        <a class="text-decoration-none text-secondary" href="{{ path('app_post_edit', {userId: app.user.id, postId: post.id}) }}">edit</a>
         {{ include('user/post/_delete_form.html.twig') }}
     </div>
 
