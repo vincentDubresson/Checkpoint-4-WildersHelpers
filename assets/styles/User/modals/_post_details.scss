@@ -163,7 +163,7 @@
                 .post-card-no-comment-resume-text {
                     font-size: 11px;
                     letter-spacing: -1px;
-                    margin-bottom: 0;
+                    margin-bottom: 10px;
                 }
                 .post-card-details-button {
                     @include dimension(75px, 20px);
@@ -184,7 +184,7 @@
                 .post-card-comments-resume-text {
                     font-size: 11px;
                     letter-spacing: -1px;
-                    margin-bottom: 0;
+                    margin-bottom: 10px;
                 }
                 .post-card-details-button {
                     @include dimension(75px, 20px);

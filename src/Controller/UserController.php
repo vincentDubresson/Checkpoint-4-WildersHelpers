@@ -2,13 +2,19 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Post;
+use App\Entity\User;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
+use App\Service\CommentUtils;
 use App\Service\UserMailer;
 use DateTime;
+use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -53,9 +59,21 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/user/post/add', name: 'app_user_add_post')]
-    public function addPost(): Response
+    #[Route('/user/comment/add/{userId}/{postId}', name: 'app_user_add_comment', methods: ['POST'])]
+    #[Entity('user', options: ['id' => 'userId'])]
+    #[Entity('post', options: ['id' => 'postId'])]
+    public function addComment(User $user, Post $post, CommentUtils $commentUtils): ?Response
     {
-        return $this->redirectToRoute('app_post_index', [], Response::HTTP_SEE_OTHER);
+        $newComment = array_map('trim', $_POST);
+
+        $error = $commentUtils->checkCommentErrors($newComment);
+
+        if (empty($error)) {
+            $commentUtils->addComment($user, $post, $newComment);
+        } else {
+            $this->addFlash('danger', $error);
+        }
+        return $this->redirectToRoute('app_user', [],);
+
     }
 }

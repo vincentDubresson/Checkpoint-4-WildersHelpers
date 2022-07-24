@@ -3,6 +3,13 @@
 {% block title %}Wilders Helpers - Liste{% endblock %}
 
 {% block body %}
+{% for category, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
 <section class="user-list-welcome">
     <div class="user-list-welcome-content">
         <h1 class="user-list-welcome-content-title">Ah ! Te re-voila {{ app.user.firstName }} !!<br>Quel plaisir de te revoir !</h1>

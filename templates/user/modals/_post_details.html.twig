@@ -16,17 +16,7 @@
     </div>
     <div class="post-card-comments">
     {% if post.comments is defined and post.comments is not empty %}
-        <div class="post-card-comments-container">
-            {% for comment in post.comments %}
-                <div class="post-card-comment">
-                    <div class="post-card-comment-author-date">
-                       <img class="post-card-comment-avatar" src="{{ asset('' ~ comment.user.avatar ~ '') }}"/>
-                        <p class="post-card-comment-author">{{ comment.user.firstName }}, le {{ comment.creationDate|format_datetime('medium', 'none', locale='fr') }}</p>
-                    </div>
-                    <p class="post-card-comment-details">{{ comment.comment }}</p>
-                </div>
-            {% endfor %} 
-        </div>
+
         {% if post.comments|length is same as 1 %}
         <div class="post-card-comments-resume">
             <p class="post-card-comments-resume-text">1 commentaire pour cette annonce.</p>
@@ -41,6 +31,21 @@
             <p class="post-card-no-comment-resume-text">Pas de commentaire</p>
         </div>
     {% endif %}
+        <div class="post-card-comments-container">
+        {% for comment in post.comments %}
+            <div class="post-card-comment">
+                <div class="post-card-comment-author-date">
+                    <img class="post-card-comment-avatar" src="{{ asset('' ~ comment.user.avatar ~ '') }}"/>
+                    <p class="post-card-comment-author">{{ comment.user.firstName }}, le {{ comment.creationDate|format_datetime('medium', 'none', locale='fr') }}</p>
+                </div>
+                <p class="post-card-comment-details">{{ comment.comment }}</p>
+            </div>
+        {% endfor %} 
+        </div>
+        <form class="add-comment" method="POST" action="{{ path('app_user_add_comment', {userId: post.user.id, postId: post.id}) }}">
+            <input type="textarea" name="comment" class="add-comment-textarea" required>
+            <button type="submit">send</button>
+        </form>
     </div>
 
 </div>
