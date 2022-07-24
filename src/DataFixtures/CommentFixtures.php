@@ -52,7 +52,7 @@ class CommentFixtures extends Fixture implements DependentFixtureInterface
     {
         foreach (self::COMMENTS as $comment) {
             $wilderComment = new Comment();
-            $newDate = new DateTime("2022-07-17");
+            $newDate = new DateTime("2022-07-23");
             $wilderComment
                 ->setComment($comment['comment'])
                 ->setCreationDate($newDate)
