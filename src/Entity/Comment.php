@@ -24,6 +24,7 @@ class Comment
     private ?User $user = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
+    #[ORM\JoinColumn(onDelete: 'CASCADE')]
     private ?Post $post = null;
 
     public function getId(): ?int

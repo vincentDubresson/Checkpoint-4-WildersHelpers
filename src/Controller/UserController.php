@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Comment;
 use App\Entity\Post;
 use App\Entity\User;
 use App\Form\PostType;
@@ -11,10 +10,8 @@ use App\Repository\UserRepository;
 use App\Service\CommentUtils;
 use App\Service\UserMailer;
 use DateTime;
-use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
