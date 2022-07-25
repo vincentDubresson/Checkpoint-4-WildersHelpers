@@ -46,9 +46,9 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
         ],
         [
             'title' => 'Fusce in magna nulla Aenean.',
-            'picture' => 'garden.jpeg',
+            'picture' => 'computer.jpg',
             'description' => 'Suspendisse eu dolor sed justo lacinia iaculis. Mauris ut ex convallis, auctor erat id, vulputate nisl. Aliquam quis lobortis magna. Sed vulputate imperdiet nunc in.',
-            'category' => 'Jardin',
+            'category' => 'Informatique',
             'type' => 'offre',
             'user' => 'Vincent',
         ],
@@ -110,7 +110,7 @@ class PostFixtures extends Fixture implements DependentFixtureInterface
         ],
         [
             'title' => 'Il n\'est jamais trop tard pour planter !',
-            'picture' => 'garden.jpeg',
+            'picture' => 'aide_php.png',
             'description' => 'Vous le savez, j\'adore entretenir mon jardin. C\'est pourquoi je propose d\'aider ceux qui n\'ont pas la main verte. Grâce à moi vos fruits et légumes pousseront ! Accepte le paiement en rosé :)',
             'category' => 'Jardin',
             'type' => 'offre',
