@@ -1,7 +1,7 @@
 @import '../../_var.scss';
 
 .details-post-card-overlay {
-    position: none; // fixed
+    position: none;
     top: 0;
     left: 0;
     width: 100%;
@@ -16,7 +16,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: auto;
-        display: none; //flex
+        display: none;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
